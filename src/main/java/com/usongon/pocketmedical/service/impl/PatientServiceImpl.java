@@ -59,6 +59,11 @@ public class PatientServiceImpl implements PatientService {
         return patientMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public Patient selectByPatientMobile(String mobile) {
+        return patientMapper.selectByPatientMobile(mobile);
+    }
+
 }
 
 

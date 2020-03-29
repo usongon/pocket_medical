@@ -22,6 +22,8 @@ public interface PatientService {
 
     int updateByPrimaryKey(Patient record);
 
+    Patient selectByPatientMobile(String mobile);
+
 }
 
 

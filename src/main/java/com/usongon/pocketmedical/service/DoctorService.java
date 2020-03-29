@@ -19,5 +19,6 @@ public interface DoctorService {
 
     int updateByPrimaryKey(Doctor record);
 
+    Doctor selectByDoctorMobile(String mobile);
 }
 

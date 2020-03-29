@@ -1,0 +1,183 @@
+2020-03-29 16:56:51,172:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 4214 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-29 16:56:51,178:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-29 16:56:51,832:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5a9885fe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-29 16:56:52,038:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-29 16:56:52,050:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-29 16:56:52,057:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-29 16:56:52,057:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-29 16:56:52,135:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-29 16:56:52,135:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 931 ms
+2020-03-29 16:56:52,638:WARN main (AbstractApplicationContext.java:557) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'loginController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'loginServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.usongon.pocketmedical.dao.PatientMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2020-03-29 16:56:52,762:INFO main (DirectJDKLog.java:173) - Stopping service [Tomcat]
+2020-03-29 16:56:52,781:INFO main (ConditionEvaluationReportLoggingListener.java:136) - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-29 16:56:52,859:ERROR main (LoggingFailureAnalysisReporter.java:40) - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.usongon.pocketmedical.dao.PatientMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.usongon.pocketmedical.dao.PatientMapper' in your configuration.
+
+2020-03-29 16:57:13,038:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 4297 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-29 16:57:13,045:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-29 16:57:13,735:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$397615ec] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-29 16:57:13,924:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-29 16:57:13,933:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-29 16:57:13,940:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-29 16:57:13,940:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-29 16:57:14,004:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-29 16:57:14,004:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 923 ms
+2020-03-29 16:57:14,592:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 16:57:14,827:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-29 16:57:14,855:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-29 16:57:14,859:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.29 seconds (JVM running for 2.915)
+2020-03-29 16:58:01,961:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 16:58:01,961:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-29 16:58:01,981:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 20 ms
+2020-03-29 16:58:02,096:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-29 16:58:02,497:ERROR http-nio-12477-exec-1 (GlobalExceptionHandler.java:23) - null
+java.lang.NullPointerException: null
+	at com.usongon.pocketmedical.service.impl.LoginServiceImpl.doctorLogin(LoginServiceImpl.java:49) ~[classes/:?]
+	at com.usongon.pocketmedical.controller.LoginController.adminLogin(LoginController.java:25) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_221]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_221]
+2020-03-29 16:59:15,518:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-29 16:59:15,642:INFO Thread-4 (DruidDataSource.java:1863) - {dataSource-1} closed
+2020-03-29 16:59:20,627:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 4687 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-29 16:59:20,631:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-29 16:59:21,250:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$990300af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-29 16:59:21,453:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-29 16:59:21,465:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-29 16:59:21,473:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-29 16:59:21,474:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-29 16:59:21,538:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-29 16:59:21,538:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 883 ms
+2020-03-29 16:59:22,074:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 16:59:22,287:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-29 16:59:22,313:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-29 16:59:22,316:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.036 seconds (JVM running for 2.666)
+2020-03-29 16:59:25,132:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 16:59:25,133:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-29 16:59:25,139:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 6 ms
+2020-03-29 16:59:25,248:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-29 16:59:25,719:ERROR http-nio-12477-exec-1 (GlobalExceptionHandler.java:23) - null
+java.lang.NullPointerException: null
+	at com.usongon.pocketmedical.service.impl.LoginServiceImpl.doctorLogin(LoginServiceImpl.java:49) ~[classes/:?]
+	at com.usongon.pocketmedical.controller.LoginController.adminLogin(LoginController.java:25) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_221]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_221]
+2020-03-29 17:00:03,958:INFO http-nio-12477-exec-3 (EpollProvider.java:68) - Starting without optional epoll library
+2020-03-29 17:00:03,960:INFO http-nio-12477-exec-3 (KqueueProvider.java:70) - Starting without optional kqueue library

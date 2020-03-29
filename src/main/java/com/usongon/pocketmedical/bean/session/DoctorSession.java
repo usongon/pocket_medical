@@ -4,16 +4,16 @@ import com.usongon.pocketmedical.enums.ELoginType;
 import lombok.Data;
 
 @Data
-public class UserSession extends LoginSession {
-    private String userId;
+public class DoctorSession extends LoginSession {
+    private String doctorId;
 
     @Override
     public String loginId() {
-        return userId;
+        return doctorId;
     }
 
     @Override
     public ELoginType loginType() {
-        return ELoginType.User;
+        return ELoginType.Admin;
     }
 }

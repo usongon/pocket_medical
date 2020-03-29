@@ -1,11 +1,14 @@
 package com.usongon.pocketmedical.dao;
 
-import com.usongon.pocketmedical.bean.entity.Patient;import org.apache.ibatis.annotations.Param;
+import com.usongon.pocketmedical.bean.entity.Patient;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author zhangdehua
  * @date 2020-03-29
  */
+@Mapper
 public interface PatientMapper {
     int deleteByPrimaryKey(Integer id);
 

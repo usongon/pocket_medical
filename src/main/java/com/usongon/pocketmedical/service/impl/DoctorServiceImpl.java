@@ -55,5 +55,10 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public Doctor selectByDoctorMobile(String mobile) {
+        return doctorMapper.selectByDocMobile(mobile);
+    }
+
 }
 

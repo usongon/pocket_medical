@@ -1,7 +1,7 @@
 package com.usongon.pocketmedical.framework.interceptor;
 import com.usongon.pocketmedical.bean.session.AdminSession;
 import com.usongon.pocketmedical.bean.session.LoginSession;
-import com.usongon.pocketmedical.bean.session.UserSession;
+import com.usongon.pocketmedical.bean.session.PatientSession;
 import com.usongon.pocketmedical.common.helper.GlobalHelper;
 import com.usongon.pocketmedical.enums.EResponseCode;
 import com.usongon.pocketmedical.framework.annotation.Authorize;
@@ -45,7 +45,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             if (uri.startsWith("/admin/") && !(session instanceof AdminSession)) {
                 throw new BusinessException(EResponseCode.PermissionDenied, "无权限", "");
             }
-            if (uri.startsWith("/user/") && !(session instanceof UserSession)) {
+            if (uri.startsWith("/user/") && !(session instanceof PatientSession)) {
                 throw new BusinessException(EResponseCode.PermissionDenied, "无权限", "");
             }
             sessionRedis.setExpire(token);

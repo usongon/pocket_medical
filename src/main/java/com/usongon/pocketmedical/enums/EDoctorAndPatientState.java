@@ -4,7 +4,7 @@ package com.usongon.pocketmedical.enums;
  * @author zhangdehua
  * @date 2019-11-11
  */
-public enum EUserState {
+public enum EDoctorAndPatientState {
     Unaudited, //未审核
     On, //启用
     Off, //停用
