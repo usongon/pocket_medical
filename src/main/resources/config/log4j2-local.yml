@@ -1,0 +1,45 @@
+# 共有8个级别，按照从低到高为：ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF
+
+Appenders:
+  Console:
+    name: CONSOLE
+    target: SYSTEM_OUT
+    PatternLayout:
+      pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%5p %t (%F:%L) - %m%n"
+
+  RollingFile:
+    - name: ROLLING_FILE
+      ignoreExceptions: false
+      fileName: logs/driverFriend.log
+      filePattern: "logs/$${date:yyyy-MM}/breeze-%d{yyyy-MM-dd}-%i.log.gz"
+      PatternLayout:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"
+      Policies:
+        SizeBasedTriggeringPolicy:
+          size: "256 MB"
+      DefaultRolloverStrategy:
+        max: 1000
+
+Loggers:
+  Root:
+    level: info
+    AppenderRef:
+      - ref: CONSOLE
+      - ref: ROLLING_FILE
+
+  Logger:
+    - name: com.rmny.tech.breeze.dao
+      level: trace
+      additivity: false
+      AppenderRef:
+        - ref: CONSOLE
+#      - ref: ROLLING_FILE
+
+#    监听具体包下面的日志
+#    Logger: # 为com.xjj包配置特殊的Log级别，方便调试
+#      - name: com.xjj
+#        additivity: false
+#        level: ${sys:log.level.xjj}
+#        AppenderRef:
+#          - ref: CONSOLE
+#          - ref: ROLLING_FILE

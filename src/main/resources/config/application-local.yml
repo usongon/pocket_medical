@@ -1,0 +1,10 @@
+breeze:
+  mysql:
+    url: jdbc:mysql://127.0.0.1:3306/driverFriends?useUnicode=true&characterEncoding=utf8&serverTimezone=Hongkong
+    username: root
+    password: 12345678
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  log:
+    config-name: log4j2-local.yml
