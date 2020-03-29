@@ -56,7 +56,7 @@ public class LoginServiceImpl implements LoginService {
         session.setDoctorId(doctor.getDocId());
         String uuid = "doctor:" + UuidUtil.randomUUID();
         sessionRedis.setSession(uuid, session);
-        return new LoginResult(ELoginType.Doctor, uuid, doctor.getDocName(), "doctor");
+        return new LoginResult(ELoginType.Doctor, uuid, doctor.getDocName(), doctor.getDocRole());
     }
 
     @Override
