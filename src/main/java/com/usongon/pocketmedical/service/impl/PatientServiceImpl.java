@@ -1,5 +1,11 @@
 package com.usongon.pocketmedical.service.impl;
 
+import com.usongon.pocketmedical.bean.param.PatientRegisterParams;
+import com.usongon.pocketmedical.common.utils.PasswordUtil;
+import com.usongon.pocketmedical.common.utils.UuidUtil;
+import com.usongon.pocketmedical.enums.EResponseCode;
+import com.usongon.pocketmedical.framework.exception.BusinessException;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.usongon.pocketmedical.dao.PatientMapper;
@@ -22,7 +28,14 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public int insert(Patient record) {
+    public int insert(PatientRegisterParams params) {
+        if (patientMapper.selectByPatientMobile(params.getPatientMobile()) != null){
+            throw new BusinessException(EResponseCode.BizError, "手机号重复", "");
+        }
+        params.setPatientPassword(PasswordUtil.encode(params.getPatientPassword()));
+        Patient record = new Patient();
+        BeanUtils.copyProperties(params, record);
+        record.setPatientId(UuidUtil.randomUUID());
         return patientMapper.insert(record);
     }
 

@@ -1,4 +1,4 @@
-package com.usongon.pocketmedical.bean.entity;
+package com.usongon.pocketmedical.bean.param;
 
 import lombok.Data;
 
@@ -7,13 +7,7 @@ import lombok.Data;
  * @date 2020-03-29
  */
 @Data
-public class Patient {
-    private Integer id;
-
-    /**
-     * 患者id
-     */
-    private String patientId;
+public class PatientRegisterParams {
 
     /**
      * 患者姓名
@@ -45,8 +39,4 @@ public class Patient {
      */
     private String allergyHistory;
 
-    /**
-     * '状态 On启用  Off停用  Unaudited未审核 Del已删除'
-     */
-    private String patientState;
 }

@@ -10,7 +10,7 @@ Appenders:
   RollingFile:
     - name: ROLLING_FILE
       ignoreExceptions: false
-      fileName: logs/driverFriend.log
+      fileName: logs/pocketmedical.log
       filePattern: "logs/$${date:yyyy-MM}/breeze-%d{yyyy-MM-dd}-%i.log.gz"
       PatternLayout:
         pattern: "%d{yyyy-MM-dd HH:mm:ss,SSS}:%4p %t (%F:%L) - %m%n"

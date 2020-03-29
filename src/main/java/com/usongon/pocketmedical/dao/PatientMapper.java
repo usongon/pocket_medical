@@ -1,6 +1,6 @@
 package com.usongon.pocketmedical.dao;
 
-import com.usongon.pocketmedical.bean.entity.Patient;
+import com.usongon.pocketmedical.bean.entity.Patient;import org.apache.ibatis.annotations.Param;
 
 /**
  * @author zhangdehua
@@ -18,4 +18,6 @@ public interface PatientMapper {
     int updateByPrimaryKeySelective(Patient record);
 
     int updateByPrimaryKey(Patient record);
+
+    Patient selectByPatientMobile(@Param("patientMobile") String patientMobile);
 }

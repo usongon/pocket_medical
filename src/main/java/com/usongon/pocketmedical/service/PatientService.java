@@ -1,6 +1,7 @@
 package com.usongon.pocketmedical.service;
 
 import com.usongon.pocketmedical.bean.entity.Patient;
+import com.usongon.pocketmedical.bean.param.PatientRegisterParams;
 
 /**
  * @author zhangdehua
@@ -11,7 +12,7 @@ public interface PatientService {
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Patient record);
+    int insert(PatientRegisterParams record);
 
     int insertSelective(Patient record);
 
