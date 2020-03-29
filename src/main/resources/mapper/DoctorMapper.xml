@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usongon.pocketmedical.dao.DoctorMapper">
+  <resultMap id="BaseResultMap" type="com.usongon.pocketmedical.bean.entity.Doctor">
+    <!--@mbg.generated-->
+    <!--@Table doctor-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="doc_id" jdbcType="VARCHAR" property="docId" />
+    <result column="department_id" jdbcType="VARCHAR" property="departmentId" />
+    <result column="doc_name" jdbcType="VARCHAR" property="docName" />
+    <result column="doc_mobile" jdbcType="VARCHAR" property="docMobile" />
+    <result column="doc_password" jdbcType="VARCHAR" property="docPassword" />
+    <result column="doc_sex" jdbcType="VARCHAR" property="docSex" />
+    <result column="doc_age" jdbcType="INTEGER" property="docAge" />
+    <result column="doc_role" jdbcType="VARCHAR" property="docRole" />
+    <result column="doc_state" jdbcType="VARCHAR" property="docState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, doc_id, department_id, doc_name, doc_mobile, doc_password, doc_sex, doc_age, 
+    doc_role, doc_state
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from doctor
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.Doctor" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into doctor (doc_id, department_id, doc_name, 
+      doc_mobile, doc_password, doc_sex, 
+      doc_age, doc_role
+      )
+    values (#{docId,jdbcType=VARCHAR}, #{departmentId,jdbcType=VARCHAR}, #{docName,jdbcType=VARCHAR}, 
+      #{docMobile,jdbcType=VARCHAR}, #{docPassword,jdbcType=VARCHAR}, #{docSex,jdbcType=VARCHAR}, 
+      #{docAge,jdbcType=INTEGER}, #{docRole,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.Doctor" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into doctor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="docId != null">
+        doc_id,
+      </if>
+      <if test="departmentId != null">
+        department_id,
+      </if>
+      <if test="docName != null">
+        doc_name,
+      </if>
+      <if test="docMobile != null">
+        doc_mobile,
+      </if>
+      <if test="docPassword != null">
+        doc_password,
+      </if>
+      <if test="docSex != null">
+        doc_sex,
+      </if>
+      <if test="docAge != null">
+        doc_age,
+      </if>
+      <if test="docRole != null">
+        doc_role,
+      </if>
+      <if test="docState != null">
+        doc_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="docId != null">
+        #{docId,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null">
+        #{departmentId,jdbcType=VARCHAR},
+      </if>
+      <if test="docName != null">
+        #{docName,jdbcType=VARCHAR},
+      </if>
+      <if test="docMobile != null">
+        #{docMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="docPassword != null">
+        #{docPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="docSex != null">
+        #{docSex,jdbcType=VARCHAR},
+      </if>
+      <if test="docAge != null">
+        #{docAge,jdbcType=INTEGER},
+      </if>
+      <if test="docRole != null">
+        #{docRole,jdbcType=VARCHAR},
+      </if>
+      <if test="docState != null">
+        #{docState,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.usongon.pocketmedical.bean.entity.Doctor">
+    <!--@mbg.generated-->
+    update doctor
+    <set>
+      <if test="docId != null">
+        doc_id = #{docId,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null">
+        department_id = #{departmentId,jdbcType=VARCHAR},
+      </if>
+      <if test="docName != null">
+        doc_name = #{docName,jdbcType=VARCHAR},
+      </if>
+      <if test="docMobile != null">
+        doc_mobile = #{docMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="docPassword != null">
+        doc_password = #{docPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="docSex != null">
+        doc_sex = #{docSex,jdbcType=VARCHAR},
+      </if>
+      <if test="docAge != null">
+        doc_age = #{docAge,jdbcType=INTEGER},
+      </if>
+      <if test="docRole != null">
+        doc_role = #{docRole,jdbcType=VARCHAR},
+      </if>
+      <if test="docState != null">
+        doc_state = #{docState,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.usongon.pocketmedical.bean.entity.Doctor">
+    <!--@mbg.generated-->
+    update doctor
+    set doc_id = #{docId,jdbcType=VARCHAR},
+      department_id = #{departmentId,jdbcType=VARCHAR},
+      doc_name = #{docName,jdbcType=VARCHAR},
+      doc_mobile = #{docMobile,jdbcType=VARCHAR},
+      doc_password = #{docPassword,jdbcType=VARCHAR},
+      doc_sex = #{docSex,jdbcType=VARCHAR},
+      doc_age = #{docAge,jdbcType=INTEGER},
+      doc_role = #{docRole,jdbcType=VARCHAR},
+      doc_state = #{docState,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+<!--auto generated by MybatisCodeHelper on 2020-03-29-->
+  <select id="selectByDocMobile" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from doctor
+    where doc_mobile=#{docMobile,jdbcType=VARCHAR}
+    limit 1
+  </select>
+</mapper>

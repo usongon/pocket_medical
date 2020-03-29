@@ -1,6 +1,6 @@
 breeze:
   mysql:
-    url: jdbc:mysql://127.0.0.1:3306/driverFriends?useUnicode=true&characterEncoding=utf8&serverTimezone=Hongkong
+    url: jdbc:mysql://127.0.0.1:3306/pocket_medical?useUnicode=true&characterEncoding=utf8&serverTimezone=Hongkong
     username: root
     password: 12345678
   redis:

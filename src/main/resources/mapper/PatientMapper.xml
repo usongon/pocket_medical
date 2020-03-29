@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usongon.pocketmedical.dao.PatientMapper">
+  <resultMap id="BaseResultMap" type="com.usongon.pocketmedical.bean.entity.Patient">
+    <!--@mbg.generated-->
+    <!--@Table patient-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="patient_id" jdbcType="VARCHAR" property="patientId" />
+    <result column="patient_name" jdbcType="VARCHAR" property="patientName" />
+    <result column="patient_mobile" jdbcType="VARCHAR" property="patientMobile" />
+    <result column="patient_password" jdbcType="VARCHAR" property="patientPassword" />
+    <result column="patient_sex" jdbcType="VARCHAR" property="patientSex" />
+    <result column="allergy_history" jdbcType="VARCHAR" property="allergyHistory" />
+    <result column="patient_state" jdbcType="VARCHAR" property="patientState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, patient_id, patient_name, patient_mobile, patient_password, patient_sex, allergy_history, 
+    patient_state
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from patient
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from patient
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.Patient" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into patient (patient_id, patient_name, patient_mobile, 
+      patient_password, patient_sex, allergy_history)
+    values (#{patientId,jdbcType=VARCHAR}, #{patientName,jdbcType=VARCHAR}, #{patientMobile,jdbcType=VARCHAR}, 
+      #{patientPassword,jdbcType=VARCHAR}, #{patientSex,jdbcType=VARCHAR}, #{allergyHistory,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.Patient" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into patient
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="patientId != null">
+        patient_id,
+      </if>
+      <if test="patientName != null">
+        patient_name,
+      </if>
+      <if test="patientMobile != null">
+        patient_mobile,
+      </if>
+      <if test="patientPassword != null">
+        patient_password,
+      </if>
+      <if test="patientSex != null">
+        patient_sex,
+      </if>
+      <if test="allergyHistory != null">
+        allergy_history,
+      </if>
+      <if test="patientState != null">
+        patient_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="patientId != null">
+        #{patientId,jdbcType=VARCHAR},
+      </if>
+      <if test="patientName != null">
+        #{patientName,jdbcType=VARCHAR},
+      </if>
+      <if test="patientMobile != null">
+        #{patientMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="patientPassword != null">
+        #{patientPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="patientSex != null">
+        #{patientSex,jdbcType=VARCHAR},
+      </if>
+      <if test="allergyHistory != null">
+        #{allergyHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="patientState != null">
+        #{patientState,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.usongon.pocketmedical.bean.entity.Patient">
+    <!--@mbg.generated-->
+    update patient
+    <set>
+      <if test="patientId != null">
+        patient_id = #{patientId,jdbcType=VARCHAR},
+      </if>
+      <if test="patientName != null">
+        patient_name = #{patientName,jdbcType=VARCHAR},
+      </if>
+      <if test="patientMobile != null">
+        patient_mobile = #{patientMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="patientPassword != null">
+        patient_password = #{patientPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="patientSex != null">
+        patient_sex = #{patientSex,jdbcType=VARCHAR},
+      </if>
+      <if test="allergyHistory != null">
+        allergy_history = #{allergyHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="patientState != null">
+        patient_state = #{patientState,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.usongon.pocketmedical.bean.entity.Patient">
+    <!--@mbg.generated-->
+    update patient
+    set patient_id = #{patientId,jdbcType=VARCHAR},
+      patient_name = #{patientName,jdbcType=VARCHAR},
+      patient_mobile = #{patientMobile,jdbcType=VARCHAR},
+      patient_password = #{patientPassword,jdbcType=VARCHAR},
+      patient_sex = #{patientSex,jdbcType=VARCHAR},
+      allergy_history = #{allergyHistory,jdbcType=VARCHAR},
+      patient_state = #{patientState,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
