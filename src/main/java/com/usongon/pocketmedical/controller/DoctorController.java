@@ -6,6 +6,7 @@ import com.usongon.pocketmedical.common.utils.PasswordUtil;
 import com.usongon.pocketmedical.enums.EResponseCode;
 import com.usongon.pocketmedical.framework.exception.BusinessException;
 import com.usongon.pocketmedical.service.DoctorService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,11 +23,6 @@ public class DoctorController {
 
     @PostMapping("/doctor/register")
     public Object registerDoc(DoctorRegisterParams params){
-        final String F = "女";
-        final String M = "男";
-        if (!F.equals(params.getDocSex()) && !M.equals(params.getDocSex())){
-            throw new BusinessException(EResponseCode.BizError,"性别输入有误", "");
-        }
         doctorService.insert(params);
         return ResponseResult.success();
     }

@@ -31,6 +31,13 @@ public class DoctorServiceImpl implements DoctorService {
         params.setDocPassword(PasswordUtil.encode(params.getDocPassword()));
         Doctor record = new Doctor();
         BeanUtils.copyProperties(params, record);
+        if (params.getDocSex().equals(1)){
+            record.setDocSex("男");
+        }else if (params.getDocSex().equals(0)){
+            record.setDocSex("女");
+        }else {
+            throw new BusinessException(EResponseCode.BizError, "性别输入有误", "");
+        }
         record.setDocId(UuidUtil.randomUUID());
         return doctorMapper.insert(record);
     }

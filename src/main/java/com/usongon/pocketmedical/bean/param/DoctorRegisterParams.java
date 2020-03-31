@@ -1,5 +1,6 @@
 package com.usongon.pocketmedical.bean.param;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -7,6 +8,7 @@ import lombok.Data;
  * @date 2020-03-29
  */
 @Data
+@AllArgsConstructor
 public class DoctorRegisterParams {
 
     /**
@@ -32,7 +34,7 @@ public class DoctorRegisterParams {
     /**
      * 性别  填'男' or '女'
      */
-    private String docSex;
+    private Integer docSex;
 
     /**
      * 医生年龄
