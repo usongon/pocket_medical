@@ -15,13 +15,14 @@ import javax.annotation.Resource;
  * @date 2019-11-11
  */
 @RestController
+@Authorize
 public class LoginController {
     @Resource
     private LoginService loginService;
 
     @Authorize(login = false)
     @PostMapping("/doctor/login")
-    public Object adminLogin(LoginParams params){
+    public Object doctorLogin(LoginParams params){
         return ResponseResult.success(loginService.doctorLogin(params));
     }
 
@@ -31,6 +32,11 @@ public class LoginController {
         return ResponseResult.success(loginService.patientLogin(params));
     }
 
+    @Authorize(login = false)
+    @PostMapping("/admin/login")
+    public Object adminLogin(LoginParams params){
+        return ResponseResult.success(loginService.adminLogin(params));
+    }
     @Authorize
     @PostMapping("/logout")
     public Object logout(@RequestHeader(name = "token") String token){

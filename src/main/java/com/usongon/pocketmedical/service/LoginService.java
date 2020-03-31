@@ -10,5 +10,6 @@ import com.usongon.pocketmedical.bean.result.LoginResult;
 public interface LoginService {
     LoginResult doctorLogin(LoginParams params);
     LoginResult patientLogin(LoginParams params);
+    LoginResult adminLogin(LoginParams params);
     void logout(String key);
 }

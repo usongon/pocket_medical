@@ -154,7 +154,7 @@
     select
     <include refid="Base_Column_List"/>
     from doctor
-    where doc_mobile=#{docMobile,jdbcType=VARCHAR}
+    where doc_mobile=#{docMobile,jdbcType=VARCHAR} and doc_state = 'On'
     limit 1
   </select>
 </mapper>

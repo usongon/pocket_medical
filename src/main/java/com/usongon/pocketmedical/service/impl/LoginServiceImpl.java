@@ -1,9 +1,11 @@
 package com.usongon.pocketmedical.service.impl;
 
+import com.usongon.pocketmedical.bean.entity.Admin;
 import com.usongon.pocketmedical.bean.entity.Doctor;
 import com.usongon.pocketmedical.bean.entity.Patient;
 import com.usongon.pocketmedical.bean.param.LoginParams;
 import com.usongon.pocketmedical.bean.result.LoginResult;
+import com.usongon.pocketmedical.bean.session.AdminSession;
 import com.usongon.pocketmedical.bean.session.DoctorSession;
 import com.usongon.pocketmedical.bean.session.PatientSession;
 import com.usongon.pocketmedical.common.utils.PasswordUtil;
@@ -14,6 +16,7 @@ import com.usongon.pocketmedical.enums.EResponseCode;
 import com.usongon.pocketmedical.framework.annotation.Authorize;
 import com.usongon.pocketmedical.framework.exception.BusinessException;
 import com.usongon.pocketmedical.redis.SessionRedis;
+import com.usongon.pocketmedical.service.AdminService;
 import com.usongon.pocketmedical.service.DoctorService;
 import com.usongon.pocketmedical.service.LoginService;
 import com.usongon.pocketmedical.service.PatientService;
@@ -34,6 +37,8 @@ public class LoginServiceImpl implements LoginService {
     private DoctorService doctorService;
     @Resource
     private PatientService patientService;
+    @Resource
+    private AdminService adminService;
     @Resource
     private SessionRedis sessionRedis;
     @Override
@@ -79,6 +84,28 @@ public class LoginServiceImpl implements LoginService {
         String uuid = "patient:" + UuidUtil.randomUUID();
         sessionRedis.setSession(uuid, session);
         return new LoginResult(ELoginType.Patient, uuid, patient.getPatientName(), "Patient");
+    }
+
+    @Override
+    public LoginResult adminLogin(LoginParams params) {
+        Admin admin = adminService.selectByAdminMobileAndAdminState(params.getMobile());
+        if (admin == null){
+            throw new BusinessException(EResponseCode.BizError, "账号或密码错误", "");
+        }
+        if (!PasswordUtil.match(params.getPassword(), admin.getAdminPassword())){
+            throw new BusinessException(EResponseCode.BizError, "账号或密码错误", "");
+        }
+        if (admin.getAdminState().equals(EDoctorAndPatientState.Del.toString())){
+            throw new BusinessException(EResponseCode.BizError, "账号或密码错误", "");
+        }
+        if (!admin.getAdminState().equals(EDoctorAndPatientState.On.toString())){
+            throw new BusinessException(EResponseCode.BizError, "您的账号未在启用状态", "");
+        }
+        AdminSession session = new AdminSession();
+        session.setAdminId(admin.getAdminId());
+        String uuid = "admin:" + UuidUtil.randomUUID();
+        sessionRedis.setSession(uuid, session);
+        return new LoginResult(ELoginType.Patient, uuid, admin.getAdminName(), "admin");
     }
 
     @Override

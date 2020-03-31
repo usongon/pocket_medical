@@ -181,3 +181,416 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_221]
 2020-03-29 17:00:03,958:INFO http-nio-12477-exec-3 (EpollProvider.java:68) - Starting without optional epoll library
 2020-03-29 17:00:03,960:INFO http-nio-12477-exec-3 (KqueueProvider.java:70) - Starting without optional kqueue library
+2020-03-30 17:24:50,005:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-30 17:24:50,122:INFO Thread-4 (DruidDataSource.java:1863) - {dataSource-1} closed
+2020-03-30 17:24:59,709:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 34917 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-30 17:24:59,713:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-30 17:25:00,330:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a1bfe246] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-30 17:25:00,532:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-30 17:25:00,544:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-30 17:25:00,552:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-30 17:25:00,553:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-30 17:25:00,619:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-30 17:25:00,619:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 877 ms
+2020-03-30 17:25:01,185:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-30 17:25:01,394:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-30 17:25:01,420:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-30 17:25:01,423:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.273 seconds (JVM running for 3.059)
+2020-03-30 17:27:19,511:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-30 17:27:26,061:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 35545 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-30 17:27:26,067:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-30 17:27:26,727:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$39de8215] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-30 17:27:26,924:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-30 17:27:26,935:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-30 17:27:26,942:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-30 17:27:26,943:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-30 17:27:27,011:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-30 17:27:27,011:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 912 ms
+2020-03-30 17:27:27,615:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-30 17:27:27,896:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-30 17:27:27,921:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-30 17:27:27,927:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.319 seconds (JVM running for 2.976)
+2020-03-30 17:27:47,101:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-30 17:27:47,102:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-30 17:27:47,108:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 6 ms
+2020-03-30 17:27:47,179:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-30 17:27:48,032:INFO http-nio-12477-exec-1 (EpollProvider.java:68) - Starting without optional epoll library
+2020-03-30 17:27:48,034:INFO http-nio-12477-exec-1 (KqueueProvider.java:70) - Starting without optional kqueue library
+2020-03-30 19:23:44,313:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-30 19:23:44,432:INFO Thread-4 (DruidDataSource.java:1863) - {dataSource-1} closed
+2020-03-30 19:23:52,709:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 43081 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-30 19:23:52,713:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-30 19:23:53,434:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$997d1c14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-30 19:23:53,663:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-30 19:23:53,674:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-30 19:23:53,681:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-30 19:23:53,682:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-30 19:23:53,746:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-30 19:23:53,746:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 1011 ms
+2020-03-30 19:23:54,284:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-30 19:23:54,487:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-30 19:23:54,513:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-30 19:23:54,516:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.192 seconds (JVM running for 2.909)
+2020-03-30 19:24:13,110:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-30 19:24:13,111:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-30 19:24:13,116:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 5 ms
+2020-03-30 19:24:13,205:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-30 19:27:06,670:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-30 19:27:06,795:INFO Thread-4 (DruidDataSource.java:1863) - {dataSource-1} closed
+2020-03-30 19:27:12,150:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 43695 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-30 19:27:12,154:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-30 19:27:12,851:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$daf41f4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-30 19:27:13,041:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-30 19:27:13,051:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-30 19:27:13,058:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-30 19:27:13,059:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-30 19:27:13,126:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-30 19:27:13,127:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 947 ms
+2020-03-30 19:27:13,657:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-30 19:27:13,861:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-30 19:27:13,888:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-30 19:27:13,891:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.122 seconds (JVM running for 2.958)
+2020-03-30 19:27:34,931:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-30 19:27:34,931:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-30 19:27:34,936:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 5 ms
+2020-03-30 19:27:35,027:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-30 19:28:49,611:INFO http-nio-12477-exec-3 (EpollProvider.java:68) - Starting without optional epoll library
+2020-03-30 19:28:49,613:INFO http-nio-12477-exec-3 (KqueueProvider.java:70) - Starting without optional kqueue library
+2020-03-31 10:49:09,515:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-31 10:49:09,647:INFO Thread-4 (DruidDataSource.java:1863) - {dataSource-1} closed
+2020-03-31 10:49:19,714:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 97395 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-31 10:49:19,719:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-31 10:49:20,354:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3aeefdc6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 10:49:20,530:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-31 10:49:20,539:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-31 10:49:20,546:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-31 10:49:20,546:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-31 10:49:20,612:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-31 10:49:20,612:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 859 ms
+2020-03-31 10:49:20,823:WARN main (AbstractApplicationContext.java:557) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.usongon.pocketmedical.dao.AdminMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2020-03-31 10:49:20,944:INFO main (DirectJDKLog.java:173) - Stopping service [Tomcat]
+2020-03-31 10:49:20,960:INFO main (ConditionEvaluationReportLoggingListener.java:136) - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-31 10:49:21,018:ERROR main (LoggingFailureAnalysisReporter.java:40) - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.usongon.pocketmedical.dao.AdminMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.usongon.pocketmedical.dao.AdminMapper' in your configuration.
+
+2020-03-31 10:49:33,248:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 97463 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-31 10:49:33,252:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-31 10:49:33,940:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5222a124] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 10:49:34,125:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-31 10:49:34,135:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-31 10:49:34,142:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-31 10:49:34,143:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-31 10:49:34,209:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-31 10:49:34,210:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 926 ms
+2020-03-31 10:49:34,747:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-31 10:49:34,959:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-31 10:49:34,986:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-31 10:49:34,989:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.141 seconds (JVM running for 2.717)
+2020-03-31 10:50:43,126:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-31 10:50:43,126:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-31 10:50:43,134:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 7 ms
+2020-03-31 10:50:52,971:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-31 10:50:58,072:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 97726 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-31 10:50:58,076:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-31 10:50:58,767:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e6633d19] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 10:50:58,955:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-31 10:50:58,965:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-31 10:50:58,972:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-31 10:50:58,973:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-31 10:50:59,043:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-31 10:50:59,044:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 940 ms
+2020-03-31 10:50:59,600:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-31 10:50:59,814:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-31 10:50:59,841:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-31 10:50:59,844:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.129 seconds (JVM running for 2.749)
+2020-03-31 10:51:05,711:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-31 10:51:05,711:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-31 10:51:05,716:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 5 ms
+2020-03-31 10:51:05,785:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-31 10:51:06,620:ERROR http-nio-12477-exec-1 (GlobalExceptionHandler.java:23) - 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'pocket_medical.admin' doesn't exist
+### The error may exist in file [/Users/hunter/IdeaProjects/pocketmedical/target/classes/mapper/AdminMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select                    id, admin_id, admin_name, admin_mobile, admin_password, admin_state             from admin         where admin_mobile=? and admin_state='On' limit 1
+### Cause: java.sql.SQLSyntaxErrorException: Table 'pocket_medical.admin' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'pocket_medical.admin' doesn't exist
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'pocket_medical.admin' doesn't exist
+### The error may exist in file [/Users/hunter/IdeaProjects/pocketmedical/target/classes/mapper/AdminMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select                    id, admin_id, admin_name, admin_mobile, admin_password, admin_state             from admin         where admin_mobile=? and admin_state='On' limit 1
+### Cause: java.sql.SQLSyntaxErrorException: Table 'pocket_medical.admin' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'pocket_medical.admin' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:235) ~[spring-jdbc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.selectOne(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy73.selectByAdminMobileAndAdminState(Unknown Source) ~[?:?]
+	at com.usongon.pocketmedical.service.impl.AdminServiceImpl.insert(AdminServiceImpl.java:27) ~[classes/:?]
+	at com.usongon.pocketmedical.controller.AdminController.insertAdmin(AdminController.java:23) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_221]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_221]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'pocket_medical.admin' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:974) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:391) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498) ~[druid-1.1.12.jar:1.1.12]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:108) ~[pagehelper-5.1.8.jar:?]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy94.query(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_221]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 61 more
+2020-03-31 11:01:26,510:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-31 11:01:26,635:INFO Thread-4 (DruidDataSource.java:1863) - {dataSource-1} closed
+2020-03-31 11:01:32,368:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 99674 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-31 11:01:32,371:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-31 11:01:33,030:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fb7b504f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 11:01:33,218:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-31 11:01:33,227:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-31 11:01:33,233:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-31 11:01:33,234:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-31 11:01:33,300:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-31 11:01:33,300:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 905 ms
+2020-03-31 11:01:33,832:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-31 11:01:34,040:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-31 11:01:34,066:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-31 11:01:34,069:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.054 seconds (JVM running for 2.727)
+2020-03-31 11:02:02,179:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-31 11:02:02,180:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-31 11:02:02,185:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 4 ms
+2020-03-31 11:02:02,260:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-31 11:04:08,900:WARN http-nio-12477-exec-3 (BCryptPasswordEncoder.java:90) - Encoded password does not look like BCrypt
+2020-03-31 11:06:52,786:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-31 11:06:52,912:INFO Thread-4 (DruidDataSource.java:1863) - {dataSource-1} closed
+2020-03-31 11:06:58,103:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 1038 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-31 11:06:58,108:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-31 11:06:59,104:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d25524ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 11:06:59,353:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-31 11:06:59,363:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-31 11:06:59,370:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-31 11:06:59,370:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-31 11:06:59,434:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-31 11:06:59,434:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 1301 ms
+2020-03-31 11:06:59,991:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-31 11:07:00,202:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-31 11:07:00,231:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-31 11:07:00,234:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.494 seconds (JVM running for 3.164)
+2020-03-31 11:07:13,399:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-31 11:07:13,399:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-31 11:07:13,407:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 8 ms
+2020-03-31 11:07:13,480:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-31 11:07:14,254:ERROR http-nio-12477-exec-1 (GlobalExceptionHandler.java:23) - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'admin_mobile' cannot be null
+### The error may involve com.usongon.pocketmedical.dao.AdminMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into admin (admin_id, admin_name, admin_mobile,        admin_password)     values (?, ?, ?,        ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'admin_mobile' cannot be null
+; Column 'admin_mobile' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'admin_mobile' cannot be null
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'admin_mobile' cannot be null
+### The error may involve com.usongon.pocketmedical.dao.AdminMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into admin (admin_id, admin_name, admin_mobile,        admin_password)     values (?, ?, ?,        ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'admin_mobile' cannot be null
+; Column 'admin_mobile' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'admin_mobile' cannot be null
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:87) ~[spring-jdbc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81) ~[spring-jdbc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.insert(Unknown Source) ~[?:?]
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy73.insert(Unknown Source) ~[?:?]
+	at com.usongon.pocketmedical.service.impl.AdminServiceImpl.insert(AdminServiceImpl.java:33) ~[classes/:?]
+	at com.usongon.pocketmedical.controller.AdminController.insertAdmin(AdminController.java:31) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_221]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.10.RELEASE.jar:5.1.10.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_221]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.26.jar:9.0.26]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_221]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'admin_mobile' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:974) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:391) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498) ~[druid-1.1.12.jar:1.1.12]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_221]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy94.update(Unknown Source) ~[?:?]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_221]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 61 more
+2020-03-31 11:07:41,708:WARN http-nio-12477-exec-3 (BCryptPasswordEncoder.java:90) - Encoded password does not look like BCrypt
+2020-03-31 11:08:37,666:INFO Thread-4 (ExecutorConfigurationSupport.java:208) - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-31 11:08:37,792:INFO Thread-4 (DruidDataSource.java:1863) - {dataSource-1} closed
+2020-03-31 11:08:43,032:INFO main (StartupInfoLogger.java:50) - Starting PocketmedicalApplication on zdh with PID 1390 (/Users/hunter/IdeaProjects/pocketmedical/target/classes started by hunter in /Users/hunter/IdeaProjects/pocketmedical)
+2020-03-31 11:08:43,036:INFO main (SpringApplication.java:652) - The following profiles are active: local
+2020-03-31 11:08:43,810:INFO main (PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ddb1195d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 11:08:44,080:INFO main (TomcatWebServer.java:90) - Tomcat initialized with port(s): 12477 (http)
+2020-03-31 11:08:44,097:INFO main (DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-12477"]
+2020-03-31 11:08:44,110:INFO main (DirectJDKLog.java:173) - Starting service [Tomcat]
+2020-03-31 11:08:44,111:INFO main (DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-03-31 11:08:44,218:INFO main (DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+2020-03-31 11:08:44,219:INFO main (ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 1155 ms
+2020-03-31 11:08:44,928:INFO main (ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-31 11:08:45,166:INFO main (DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-12477"]
+2020-03-31 11:08:45,195:INFO main (TomcatWebServer.java:202) - Tomcat started on port(s): 12477 (http) with context path ''
+2020-03-31 11:08:45,199:INFO main (StartupInfoLogger.java:59) - Started PocketmedicalApplication in 2.551 seconds (JVM running for 3.302)
+2020-03-31 11:08:56,712:INFO http-nio-12477-exec-1 (DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-31 11:08:56,713:INFO http-nio-12477-exec-1 (FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+2020-03-31 11:08:56,720:INFO http-nio-12477-exec-1 (FrameworkServlet.java:547) - Completed initialization in 7 ms
+2020-03-31 11:08:56,823:INFO http-nio-12477-exec-1 (DruidDataSource.java:947) - {dataSource-1} inited
+2020-03-31 11:09:15,176:INFO http-nio-12477-exec-2 (EpollProvider.java:68) - Starting without optional epoll library
+2020-03-31 11:09:15,178:INFO http-nio-12477-exec-2 (KqueueProvider.java:70) - Starting without optional kqueue library

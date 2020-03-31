@@ -35,10 +35,10 @@
     <!--@mbg.generated-->
     insert into patient (patient_id, patient_name, patient_mobile, 
       patient_password, patient_sex, patient_age, 
-      allergy_history, patient_state)
+      allergy_history)
     values (#{patientId,jdbcType=VARCHAR}, #{patientName,jdbcType=VARCHAR}, #{patientMobile,jdbcType=VARCHAR}, 
       #{patientPassword,jdbcType=VARCHAR}, #{patientSex,jdbcType=VARCHAR}, #{patientAge,jdbcType=INTEGER}, 
-      #{allergyHistory,jdbcType=VARCHAR}, #{patientState,jdbcType=VARCHAR})
+      #{allergyHistory,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.Patient" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -146,6 +146,6 @@
     select
     <include refid="Base_Column_List" />
     from patient
-    where patient_mobile=#{patientMobile,jdbcType=VARCHAR} limit 1
+    where patient_mobile=#{patientMobile,jdbcType=VARCHAR} and patient_state = 'On' limit 1
   </select>
 </mapper>
