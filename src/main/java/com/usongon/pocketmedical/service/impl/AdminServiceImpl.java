@@ -4,6 +4,7 @@ import com.usongon.pocketmedical.bean.entity.Doctor;
 import com.usongon.pocketmedical.bean.param.AdminInsertParams;
 import com.usongon.pocketmedical.bean.param.DoctorSelectParams;
 import com.usongon.pocketmedical.bean.param.PatientSelectParams;
+import com.usongon.pocketmedical.bean.result.DepartmentResult;
 import com.usongon.pocketmedical.bean.result.DoctorResult;
 import com.usongon.pocketmedical.bean.result.PatientResult;
 import com.usongon.pocketmedical.common.utils.PasswordUtil;
@@ -11,6 +12,7 @@ import com.usongon.pocketmedical.common.utils.UuidUtil;
 import com.usongon.pocketmedical.enums.EDoctorAndPatientState;
 import com.usongon.pocketmedical.enums.EResponseCode;
 import com.usongon.pocketmedical.framework.exception.BusinessException;
+import com.usongon.pocketmedical.service.DepartmentService;
 import com.usongon.pocketmedical.service.DoctorService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -33,6 +35,8 @@ public class AdminServiceImpl implements AdminService{
     private DoctorService doctorService;
     @Resource
     private PatientServiceImpl patientService;
+    @Resource
+    private DepartmentService departmentService;
 
     @Override
     public int insert(AdminInsertParams params) {
@@ -84,6 +88,16 @@ public class AdminServiceImpl implements AdminService{
     @Override
     public void changePatientState(String patientId, EDoctorAndPatientState state) {
         patientService.updatePatientStateByPatientIdAndPatientState(patientId, state.toString());
+    }
+
+    @Override
+    public void insertDepartment(String departmentName) {
+        departmentService.insert(departmentName);
+    }
+
+    @Override
+    public List<DepartmentResult> getDepartmenrList() {
+        return departmentService.selectAllByDepartmentIdAndIsDel();
     }
 
 }

@@ -3,6 +3,7 @@ package com.usongon.pocketmedical.controller;
 import com.usongon.pocketmedical.bean.ResponseResult;
 import com.usongon.pocketmedical.bean.param.PatientRegisterParams;
 import com.usongon.pocketmedical.enums.EResponseCode;
+import com.usongon.pocketmedical.framework.annotation.Authorize;
 import com.usongon.pocketmedical.framework.exception.BusinessException;
 import com.usongon.pocketmedical.service.DoctorService;
 import com.usongon.pocketmedical.service.PatientService;
@@ -16,10 +17,12 @@ import javax.annotation.Resource;
  * @date 2020-03-29
  */
 @RestController
+@Authorize
 public class PatientController {
     @Resource
     private PatientService patientService;
 
+    @Authorize(login = false)
     @PostMapping("/patient/register")
     public Object registerDoc(PatientRegisterParams params){
         final String F = "女";

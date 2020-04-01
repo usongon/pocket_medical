@@ -5,6 +5,7 @@ import com.usongon.pocketmedical.bean.entity.Doctor;
 import com.usongon.pocketmedical.bean.param.AdminInsertParams;
 import com.usongon.pocketmedical.bean.param.DoctorSelectParams;
 import com.usongon.pocketmedical.bean.param.PatientSelectParams;
+import com.usongon.pocketmedical.bean.result.DepartmentResult;
 import com.usongon.pocketmedical.bean.result.DoctorResult;
 import com.usongon.pocketmedical.bean.result.PatientResult;
 import com.usongon.pocketmedical.enums.EDoctorAndPatientState;
@@ -35,4 +36,8 @@ public interface AdminService{
     List<PatientResult> getPatientList(PatientSelectParams params);
 
     void changePatientState(String patientId, EDoctorAndPatientState state);
+
+    void insertDepartment(String departmentName);
+
+    List<DepartmentResult> getDepartmenrList();
     }
