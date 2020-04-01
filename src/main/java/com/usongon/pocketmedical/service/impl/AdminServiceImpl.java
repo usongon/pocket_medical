@@ -1,10 +1,17 @@
 package com.usongon.pocketmedical.service.impl;
 
+import com.usongon.pocketmedical.bean.entity.Doctor;
 import com.usongon.pocketmedical.bean.param.AdminInsertParams;
+import com.usongon.pocketmedical.bean.param.DoctorSelectParams;
+import com.usongon.pocketmedical.bean.param.PatientSelectParams;
+import com.usongon.pocketmedical.bean.result.DoctorResult;
+import com.usongon.pocketmedical.bean.result.PatientResult;
 import com.usongon.pocketmedical.common.utils.PasswordUtil;
 import com.usongon.pocketmedical.common.utils.UuidUtil;
+import com.usongon.pocketmedical.enums.EDoctorAndPatientState;
 import com.usongon.pocketmedical.enums.EResponseCode;
 import com.usongon.pocketmedical.framework.exception.BusinessException;
+import com.usongon.pocketmedical.service.DoctorService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -22,6 +29,10 @@ public class AdminServiceImpl implements AdminService{
 
     @Resource
     private AdminMapper adminMapper;
+    @Resource
+    private DoctorService doctorService;
+    @Resource
+    private PatientServiceImpl patientService;
 
     @Override
     public int insert(AdminInsertParams params) {
@@ -53,6 +64,26 @@ public class AdminServiceImpl implements AdminService{
     @Override
     public List<Admin> selectByAdminIdAndAdminState(String adminId) {
         return adminMapper.selectByAdminIdAndAdminState(adminId);
+    }
+
+    @Override
+    public void changeDocState(String docId, EDoctorAndPatientState state) {
+        doctorService.updateDecDocStateByDocId(docId, state.toString());
+    }
+
+    @Override
+    public List<DoctorResult> getDoctorList(DoctorSelectParams params) {
+        return doctorService.getDoctorList(params);
+    }
+
+    @Override
+    public List<PatientResult> getPatientList(PatientSelectParams params) {
+        return patientService.selectByAllExceptId(params);
+    }
+
+    @Override
+    public void changePatientState(String patientId, EDoctorAndPatientState state) {
+        patientService.updatePatientStateByPatientIdAndPatientState(patientId, state.toString());
     }
 
 }

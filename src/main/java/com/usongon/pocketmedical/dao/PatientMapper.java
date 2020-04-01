@@ -1,6 +1,9 @@
 package com.usongon.pocketmedical.dao;
+import java.util.List;
 
 import com.usongon.pocketmedical.bean.entity.Patient;
+import com.usongon.pocketmedical.bean.param.PatientSelectParams;
+import com.usongon.pocketmedical.bean.result.PatientResult;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -23,4 +26,9 @@ public interface PatientMapper {
     int updateByPrimaryKey(Patient record);
 
     Patient selectByPatientMobile(@Param("patientMobile") String patientMobile);
+
+    void updatePatientStateByPatientIdAndPatientState(@Param("updatedPatientState")String updatedPatientState,@Param("patientId")String patientId);
+
+	List<PatientResult> selectByAllExceptId(PatientSelectParams params);
+
 }

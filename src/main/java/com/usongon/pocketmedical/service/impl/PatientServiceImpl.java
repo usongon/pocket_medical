@@ -1,6 +1,8 @@
 package com.usongon.pocketmedical.service.impl;
 
 import com.usongon.pocketmedical.bean.param.PatientRegisterParams;
+import com.usongon.pocketmedical.bean.param.PatientSelectParams;
+import com.usongon.pocketmedical.bean.result.PatientResult;
 import com.usongon.pocketmedical.common.utils.PasswordUtil;
 import com.usongon.pocketmedical.common.utils.UuidUtil;
 import com.usongon.pocketmedical.enums.EResponseCode;
@@ -11,6 +13,8 @@ import javax.annotation.Resource;
 import com.usongon.pocketmedical.dao.PatientMapper;
 import com.usongon.pocketmedical.bean.entity.Patient;
 import com.usongon.pocketmedical.service.PatientService;
+
+import java.util.List;
 
 /**
  * @author zhangdehua
@@ -62,6 +66,16 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public Patient selectByPatientMobile(String mobile) {
         return patientMapper.selectByPatientMobile(mobile);
+    }
+
+    @Override
+    public void updatePatientStateByPatientIdAndPatientState(String patientId, String updatedPatientState) {
+        patientMapper.updatePatientStateByPatientIdAndPatientState(updatedPatientState, patientId);
+    }
+
+    @Override
+    public List<PatientResult> selectByAllExceptId(PatientSelectParams params) {
+        return patientMapper.selectByAllExceptId(params);
     }
 
 }

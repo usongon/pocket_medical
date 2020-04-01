@@ -1,6 +1,8 @@
 package com.usongon.pocketmedical.service.impl;
 
 import com.usongon.pocketmedical.bean.param.DoctorRegisterParams;
+import com.usongon.pocketmedical.bean.param.DoctorSelectParams;
+import com.usongon.pocketmedical.bean.result.DoctorResult;
 import com.usongon.pocketmedical.common.utils.PasswordUtil;
 import com.usongon.pocketmedical.common.utils.UuidUtil;
 import com.usongon.pocketmedical.enums.EResponseCode;
@@ -12,6 +14,8 @@ import com.usongon.pocketmedical.dao.DoctorMapper;
 import com.usongon.pocketmedical.bean.entity.Doctor;
 import com.usongon.pocketmedical.service.DoctorService;
 import sun.security.krb5.internal.PAData;
+
+import java.util.List;
 
 /**
  * @author zhangdehua
@@ -67,5 +71,24 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorMapper.selectByDocMobile(mobile);
     }
 
+    @Override
+    public void updateDecDocStateByDocId(String docId, String deductedDocState) {
+        doctorMapper.updateDecDocStateByDocId(deductedDocState, docId);
+    }
+
+    @Override
+    public List<Doctor> selectAllByDocState(String docState) {
+        return doctorMapper.selectAllByDocState(docState);
+    }
+
+    @Override
+    public List<Doctor> selectByAll(Doctor doctor) {
+        return doctorMapper.selectByAllExceptId(doctor);
+    }
+
+    @Override
+    public List<DoctorResult> getDoctorList(DoctorSelectParams params) {
+        return doctorMapper.getDoctorList(params);
+    }
 }
 

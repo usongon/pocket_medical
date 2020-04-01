@@ -1,7 +1,13 @@
 package com.usongon.pocketmedical.service;
 
 import com.usongon.pocketmedical.bean.entity.Admin;
+import com.usongon.pocketmedical.bean.entity.Doctor;
 import com.usongon.pocketmedical.bean.param.AdminInsertParams;
+import com.usongon.pocketmedical.bean.param.DoctorSelectParams;
+import com.usongon.pocketmedical.bean.param.PatientSelectParams;
+import com.usongon.pocketmedical.bean.result.DoctorResult;
+import com.usongon.pocketmedical.bean.result.PatientResult;
+import com.usongon.pocketmedical.enums.EDoctorAndPatientState;
 
 import java.util.List;
     /**
@@ -22,4 +28,11 @@ public interface AdminService{
 
     List<Admin> selectByAdminIdAndAdminState(String adminId);
 
-}
+    void changeDocState(String docId, EDoctorAndPatientState state);
+
+    List<DoctorResult> getDoctorList(DoctorSelectParams params);
+
+    List<PatientResult> getPatientList(PatientSelectParams params);
+
+    void changePatientState(String patientId, EDoctorAndPatientState state);
+    }

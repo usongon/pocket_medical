@@ -2,6 +2,10 @@ package com.usongon.pocketmedical.service;
 
 import com.usongon.pocketmedical.bean.entity.Patient;
 import com.usongon.pocketmedical.bean.param.PatientRegisterParams;
+import com.usongon.pocketmedical.bean.param.PatientSelectParams;
+import com.usongon.pocketmedical.bean.result.PatientResult;
+
+import java.util.List;
 
 /**
  * @author zhangdehua
@@ -23,6 +27,10 @@ public interface PatientService {
     int updateByPrimaryKey(Patient record);
 
     Patient selectByPatientMobile(String mobile);
+
+    void updatePatientStateByPatientIdAndPatientState(String patientId,String updatedPatientState);
+
+    List<PatientResult> selectByAllExceptId(PatientSelectParams params);
 
 }
 
