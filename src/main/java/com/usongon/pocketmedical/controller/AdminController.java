@@ -87,12 +87,4 @@ public class AdminController {
         return ResponseResult.success();
     }
 
-    @PostMapping("/admin/department/getlist")
-    public Object getDepartmenrList(){
-        AdminSession session = GlobalHelper.get();
-        if (adminService.selectByAdminIdAndAdminState(session.getAdminId()) == null){
-            throw new BusinessException(EResponseCode.BizError, "只有管理员可以获取部门列表！", "");
-        }
-        return ResponseResult.success(adminService.getDepartmenrList());
-    }
 }

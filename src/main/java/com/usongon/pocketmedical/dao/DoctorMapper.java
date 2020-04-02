@@ -35,7 +35,7 @@ public interface DoctorMapper {
 
     @Select("<script> " +
             "select d.*, dp.department_name from doctor d, department dp " +
-            "where dp.department_id = d.department_id and d.doc_state!= 'Del' " +
+            "where dp.department_id = d.department_id and d.doc_state != 'Del' " +
             "<if test = 'docId != null'> and d.doc_id = #{docId} </if> " +
             "<if test = 'departmentId != null'> and d.department_id = #{departmentId} </if> " +
             "<if test = 'keywords != null'> and (" +
