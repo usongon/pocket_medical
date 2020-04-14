@@ -18,6 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
+*.log
 
 ### NetBeans ###
 /nbproject/private/
@@ -29,3 +30,6 @@ build/
 
 ### VS Code ###
 .vscode/
+src/main/.DS_Store
+src/main/resources/.DS_Store
+src/test/java/com/usongon/pocketmedical/dao/
