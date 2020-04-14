@@ -5,6 +5,7 @@ import com.usongon.pocketmedical.bean.entity.Post;
 import java.util.List;
 
 import com.usongon.pocketmedical.bean.result.PostListResult;
+import com.usongon.pocketmedical.enums.EPostCategory;
 import com.usongon.pocketmedical.enums.EPostState;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -31,5 +32,7 @@ public interface PostMapper {
 
     PostListResult selectPostDetailByPostId(@Param("postId") String postId);
 
-    List<PostListResult> getPostListByDepartmentIdOrPostState(@Param("departmentId") String departmentId, @Param("postState") EPostState postState);
+    List<PostListResult> getPostListByDepartmentIdOrPostState(@Param("departmentId") String departmentId, @Param("postState") EPostState postState, @Param("postCategory") EPostCategory postCategory);
+
+    List<PostListResult> adminGetPostListByDepartmentIdOrPostState(@Param("departmentId") String departmentId, @Param("postState") EPostState postState, @Param("postCategory") EPostCategory postCategory);
 }

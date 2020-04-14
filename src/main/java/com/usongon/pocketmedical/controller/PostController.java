@@ -63,13 +63,22 @@ public class PostController {
     }
 
     @PostMapping("/doctor/post/list")
-    public Object doctorGetPostList(EPostState postState){
+    public Object doctorGetPostList(EPostState postState, EPostCategory postCategory){
         DoctorSession session = GlobalHelper.get();
         return ResponseResult.success(postService.
                 getPostListByDepartmentIdOrPostState(
                 doctorService.selectByDocIdAndDocState(
                         session.getDoctorId()).
-                        getDepartmentId(), postState));
+                        getDepartmentId(), postState, postCategory));
+    }
+
+    @PostMapping("/admin/post/list")
+    public Object adminGetPostList(String departmentId, EPostState postState, EPostCategory postCategory){
+        AdminSession session = GlobalHelper.get();
+        if(adminService.selectByAdminIdAndAdminState(session.getAdminId()) == null){
+            throw new BusinessException(EResponseCode.BizError, "你不是管理员，无法操作", "");
+        }
+        return ResponseResult.success(postService.adminGetPostListByDepartmentIdOrPostState(departmentId, postState, postCategory));
     }
 
     @PostMapping("/patient/post/detail")

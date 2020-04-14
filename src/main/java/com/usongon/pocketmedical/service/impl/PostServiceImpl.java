@@ -3,6 +3,7 @@ package com.usongon.pocketmedical.service.impl;
 import com.usongon.pocketmedical.bean.param.PostInsertParams;
 import com.usongon.pocketmedical.bean.result.PostListResult;
 import com.usongon.pocketmedical.common.utils.UuidUtil;
+import com.usongon.pocketmedical.enums.EPostCategory;
 import com.usongon.pocketmedical.enums.EPostState;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -67,8 +68,13 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public List<PostListResult> getPostListByDepartmentIdOrPostState(String departmentId, EPostState postState) {
-        return postMapper.getPostListByDepartmentIdOrPostState(departmentId, postState);
+    public List<PostListResult> getPostListByDepartmentIdOrPostState(String departmentId, EPostState postState, EPostCategory postCategory) {
+        return postMapper.getPostListByDepartmentIdOrPostState(departmentId, postState, postCategory);
+    }
+
+    @Override
+    public List<PostListResult> adminGetPostListByDepartmentIdOrPostState(String departmentId, EPostState postState, EPostCategory postCategory) {
+        return postMapper.adminGetPostListByDepartmentIdOrPostState(departmentId, postState, postCategory);
     }
 
 }

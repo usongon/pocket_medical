@@ -131,7 +131,7 @@
         where post_id=#{postId,jdbcType=VARCHAR} and department_id=#{departmentId,jdbcType=VARCHAR}
     </update>
     <select id="selectPostDetailByPostId" resultType="com.usongon.pocketmedical.bean.result.PostListResult">
-        select p.*, pa.patient_name from post p, patient pa
+        select p.*, pa.patient_name as poster_name from post p, patient pa
         where p.post_id = #{postId,jdbcType=VARCHAR}
         and p.poster_id = pa.patient_id
         and p.post_state != 'Del' Limit 1
@@ -142,6 +142,21 @@
         where p.department_id = #{departmentId,jdbcType=VARCHAR}
         <if test="postState != null">
             and p.post_state = #{postState.postState,jdbcType=VARCHAR}
+        </if>
+        <if test="postCategory != null">
+            and p.post_category = #{postCategory.category,jdbcType=VARCHAR}
+        </if>
+        and p.poster_id = pa.patient_id and p.post_state != 'Del' and p.post_category != 'complain'
+    </select>
+    <select id="adminGetPostListByDepartmentIdOrPostState"
+            resultType="com.usongon.pocketmedical.bean.result.PostListResult">
+        select p.*, pa.patient_name as poster_name from post p, patient pa
+        where p.department_id = #{departmentId,jdbcType=VARCHAR}
+        <if test="postState != null">
+            and p.post_state = #{postState.postState,jdbcType=VARCHAR}
+        </if>
+        <if test="postCategory != null">
+            and p.post_category = #{postCategory.category,jdbcType=VARCHAR}
         </if>
         and p.poster_id = pa.patient_id and p.post_state != 'Del'
     </select>
