@@ -38,6 +38,11 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
+    public Department selectByDepartmentIdAndIsDel(String departmentId) {
+        return departmentMapper.selectByDepartmentIdAndIsDel(departmentId);
+    }
+
+    @Override
     public int deleteDepartmentById(String departmentId) {
         return departmentMapper.updateIsDelByDepartmentId(departmentId);
     }

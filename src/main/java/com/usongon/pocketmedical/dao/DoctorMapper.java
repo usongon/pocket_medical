@@ -45,6 +45,8 @@ public interface DoctorMapper {
             "</script>")
     List<DoctorResult> getDoctorList(DoctorSelectParams params);
 
+    Doctor selectByDocIdAndDocState(@Param("docId")String docId);
+
 
 
 

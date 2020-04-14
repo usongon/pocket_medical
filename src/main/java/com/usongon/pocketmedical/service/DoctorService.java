@@ -32,5 +32,7 @@ public interface DoctorService {
     List<Doctor> selectByAll(Doctor doctor);
 
     List<DoctorResult> getDoctorList(DoctorSelectParams params);
+
+    Doctor selectByDocIdAndDocState(String docId);
 }
 

@@ -90,5 +90,10 @@ public class DoctorServiceImpl implements DoctorService {
     public List<DoctorResult> getDoctorList(DoctorSelectParams params) {
         return doctorMapper.getDoctorList(params);
     }
+
+    @Override
+    public Doctor selectByDocIdAndDocState(String docId) {
+        return doctorMapper.selectByDocIdAndDocState(docId);
+    }
 }
 

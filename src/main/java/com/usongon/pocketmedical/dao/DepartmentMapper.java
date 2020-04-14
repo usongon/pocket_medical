@@ -20,5 +20,8 @@ public interface DepartmentMapper {
 
     List<DepartmentResult> selectAllByDepartmentIdAndIsDel();
 
+    Department selectByDepartmentIdAndIsDel(@Param("departmentId")String departmentId);
+
     int updateIsDelByDepartmentId(@Param("departmentId") String departmentId);
+
 }

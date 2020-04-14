@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usongon.pocketmedical.dao.PostReplyMapper">
+  <resultMap id="BaseResultMap" type="com.usongon.pocketmedical.bean.entity.PostReply">
+    <!--@mbg.generated-->
+    <!--@Table post_reply-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="reply_id" jdbcType="VARCHAR" property="replyId" />
+    <result column="post_id" jdbcType="VARCHAR" property="postId" />
+    <result column="replier_id" jdbcType="VARCHAR" property="replierId" />
+    <result column="replier_role" jdbcType="VARCHAR" property="replierRole" />
+    <result column="reply_content" jdbcType="LONGVARCHAR" property="replyContent" />
+    <result column="is_del" jdbcType="TINYINT" property="isDel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, reply_id, post_id, replier_id, replier_role, reply_content, is_del
+  </sql>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.PostReply" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into post_reply (reply_id, post_id, replier_id, 
+      replier_role, reply_content, is_del
+      )
+    values (#{replyId,jdbcType=VARCHAR}, #{postId,jdbcType=VARCHAR}, #{replierId,jdbcType=VARCHAR}, 
+      #{replierRole,jdbcType=VARCHAR}, #{replyContent,jdbcType=LONGVARCHAR}, #{isDel,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.PostReply" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into post_reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="replyId != null">
+        reply_id,
+      </if>
+      <if test="postId != null">
+        post_id,
+      </if>
+      <if test="replierId != null">
+        replier_id,
+      </if>
+      <if test="replierRole != null">
+        replier_role,
+      </if>
+      <if test="replyContent != null">
+        reply_content,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="replyId != null">
+        #{replyId,jdbcType=VARCHAR},
+      </if>
+      <if test="postId != null">
+        #{postId,jdbcType=VARCHAR},
+      </if>
+      <if test="replierId != null">
+        #{replierId,jdbcType=VARCHAR},
+      </if>
+      <if test="replierRole != null">
+        #{replierRole,jdbcType=VARCHAR},
+      </if>
+      <if test="replyContent != null">
+        #{replyContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

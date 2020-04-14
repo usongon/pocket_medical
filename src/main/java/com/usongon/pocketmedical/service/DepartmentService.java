@@ -18,6 +18,8 @@ public interface DepartmentService{
 
     List<DepartmentResult> selectAllByDepartmentIdAndIsDel();
 
+    Department selectByDepartmentIdAndIsDel(String departmentId);
+
     int deleteDepartmentById(String departmentId);
 
 }

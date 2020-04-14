@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usongon.pocketmedical.dao.PostMapper">
+  <resultMap id="BaseResultMap" type="com.usongon.pocketmedical.bean.entity.Post">
+    <!--@mbg.generated-->
+    <!--@Table post-->
+    <result column="post_id" jdbcType="VARCHAR" property="postId" />
+    <result column="poster_id" jdbcType="VARCHAR" property="posterId" />
+    <result column="post_title" jdbcType="VARCHAR" property="postTitle" />
+    <result column="post_category" jdbcType="VARCHAR" property="postCategory" />
+    <result column="department_id" jdbcType="VARCHAR" property="departmentId" />
+    <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
+    <result column="post_state" jdbcType="VARCHAR" property="postState" />
+  </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        post_id, poster_id, post_title, post_category, department_id, post_content, post_state
+    </sql>
+  <insert id="insert" keyColumn="post_id" keyProperty="postId" parameterType="com.usongon.pocketmedical.bean.entity.Post" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into post (post_id, poster_id, post_title, post_category,
+      department_id, post_content, post_state
+      )
+    values (#{postId}, #{posterId,jdbcType=VARCHAR}, #{postTitle,jdbcType=VARCHAR}, #{postCategory,jdbcType=VARCHAR},
+      #{departmentId,jdbcType=VARCHAR}, #{postContent,jdbcType=LONGVARCHAR}, #{postState,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="post_id" keyProperty="postId" parameterType="com.usongon.pocketmedical.bean.entity.Post" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into post
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="postId != null ">
+            post_id,
+      </if>
+      <if test="posterId != null">
+        poster_id,
+      </if>
+      <if test="postTitle != null">
+        post_title,
+      </if>
+      <if test="postCategory != null">
+        post_category,
+      </if>
+      <if test="departmentId != null">
+        department_id,
+      </if>
+      <if test="postContent != null">
+        post_content,
+      </if>
+      <if test="postState != null">
+        post_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="postId != null ">
+          #{postId,jdbcType=VARCHAR},
+      </if>
+      <if test="posterId != null">
+        #{posterId,jdbcType=VARCHAR},
+      </if>
+      <if test="postTitle != null">
+        #{postTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="postCategory != null">
+        #{postCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentId != null">
+        #{departmentId,jdbcType=VARCHAR},
+      </if>
+      <if test="postContent != null">
+        #{postContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="postState != null">
+        #{postState,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectAllByPosterIdAndPostState" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from post
+        where poster_id=#{posterId,jdbcType=VARCHAR} and post_state != 'Del'
+    </select>
+  <update id="updateByPosterIdAndPostStateAndPostId">
+        <!--@mbg.generated-->
+        update post
+        <set>
+            <if test="updated.postId != null">
+                post_id = #{updated.postId,jdbcType=VARCHAR},
+            </if>
+            <if test="updated.posterId != null">
+                poster_id = #{updated.posterId,jdbcType=VARCHAR},
+            </if>
+            <if test="updated.postTitle != null">
+                post_title = #{updated.postTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="updated.postCategory != null">
+                post_category = #{updated.postCategory,jdbcType=VARCHAR},
+            </if>
+            <if test="updated.departmentId != null">
+                department_id = #{updated.departmentId,jdbcType=VARCHAR},
+            </if>
+            <if test="updated.postContent != null">
+                post_content = #{updated.postContent,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="updated.postState != null">
+                post_state = #{updated.postState,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where poster_id=#{posterId,jdbcType=VARCHAR} and post_state=#{postState,jdbcType=VARCHAR} and
+        post_id=#{postId,jdbcType=VARCHAR}
+    </update>
+  <update id="updatePostStateByPosterIdAndPostId">
+        <!--@mbg.generated-->
+        update post
+        set post_state=#{updatedPostState,jdbcType=VARCHAR}
+        where poster_id=#{posterId,jdbcType=VARCHAR} and post_id=#{postId,jdbcType=VARCHAR}
+    </update>
+  <select id="selectAllByDepartmentIdAndPostState" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from post
+        where department_id=#{departmentId,jdbcType=VARCHAR} and post_state=#{postState,jdbcType=VARCHAR}
+    </select>
+  <update id="updatePostStateByPostIdAndDepartmentId">
+        <!--@mbg.generated-->
+        update post
+        set post_state=#{updatedPostState,jdbcType=VARCHAR}
+        where post_id=#{postId,jdbcType=VARCHAR} and department_id=#{departmentId,jdbcType=VARCHAR}
+    </update>
+    <select id="selectPostDetailByPostId" resultType="com.usongon.pocketmedical.bean.result.PostListResult">
+        select p.*, pa.patient_name from post p, patient pa
+        where p.post_id = #{postId,jdbcType=VARCHAR}
+        and p.poster_id = pa.patient_id
+        and p.post_state != 'Del' Limit 1
+    </select>
+    <select id="getPostListByDepartmentIdOrPostState"
+            resultType="com.usongon.pocketmedical.bean.result.PostListResult">
+        select p.*, pa.patient_name as poster_name from post p, patient pa
+        where p.department_id = #{departmentId,jdbcType=VARCHAR}
+        <if test="postState != null">
+            and p.post_state = #{postState.postState,jdbcType=VARCHAR}
+        </if>
+        and p.poster_id = pa.patient_id and p.post_state != 'Del'
+    </select>
+</mapper>
