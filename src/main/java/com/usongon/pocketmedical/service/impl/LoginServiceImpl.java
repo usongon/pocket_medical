@@ -61,7 +61,7 @@ public class LoginServiceImpl implements LoginService {
         session.setDoctorId(doctor.getDocId());
         String uuid = "doctor:" + UuidUtil.randomUUID();
         sessionRedis.setSession(uuid, session);
-        return new LoginResult(ELoginType.Doctor, uuid, doctor.getDocName(), doctor.getDocRole());
+        return new LoginResult(ELoginType.Doctor, uuid, doctor.getDocName(), doctor.getDocRole(), params.getMobile());
     }
 
     @Override
@@ -83,7 +83,7 @@ public class LoginServiceImpl implements LoginService {
         session.setPatientId(patient.getPatientId());
         String uuid = "patient:" + UuidUtil.randomUUID();
         sessionRedis.setSession(uuid, session);
-        return new LoginResult(ELoginType.Patient, uuid, patient.getPatientName(), "Patient");
+        return new LoginResult(ELoginType.Patient, uuid, patient.getPatientName(), "Patient", params.getMobile());
     }
 
     @Override
@@ -105,7 +105,7 @@ public class LoginServiceImpl implements LoginService {
         session.setAdminId(admin.getAdminId());
         String uuid = "admin:" + UuidUtil.randomUUID();
         sessionRedis.setSession(uuid, session);
-        return new LoginResult(ELoginType.Patient, uuid, admin.getAdminName(), "admin");
+        return new LoginResult(ELoginType.Patient, uuid, admin.getAdminName(), "admin", params.getMobile());
     }
 
     @Override
