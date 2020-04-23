@@ -1,8 +1,10 @@
 package com.usongon.pocketmedical.controller;
 
 import com.usongon.pocketmedical.bean.ResponseResult;
+import com.usongon.pocketmedical.bean.entity.Post;
 import com.usongon.pocketmedical.bean.param.PatientSelectParams;
 import com.usongon.pocketmedical.bean.param.PostInsertParams;
+import com.usongon.pocketmedical.bean.param.PostReplyInsertParams;
 import com.usongon.pocketmedical.bean.result.PostListResult;
 import com.usongon.pocketmedical.bean.session.AdminSession;
 import com.usongon.pocketmedical.bean.session.DoctorSession;
@@ -48,7 +50,7 @@ public class PostController {
         if (patientService.selectByAllExceptId(patientSelectParams) == null){
             throw new BusinessException(EResponseCode.BizError, "只有患者可以发帖", "");
         }
-        if (departmentService.selectByDepartmentIdAndIsDel(params.getDepartmentId()) == null){
+        if (params.getDepartmentId() != null && departmentService.selectByDepartmentIdAndIsDel(params.getDepartmentId()) == null){
             throw new BusinessException(EResponseCode.BizError, "部门不存在", "");
         }
         params.setPosterId(session.getPatientId());
@@ -114,5 +116,57 @@ public class PostController {
             throw new BusinessException(EResponseCode.BizError, "你不是管理员，无法操作", "");
         }
         return ResponseResult.success(postService.selectPostDetailByPostId(postId));
+    }
+
+    @PostMapping("/admin/post/reply")
+    public Object adminReplyPost(PostReplyInsertParams params){
+        AdminSession session = GlobalHelper.get();
+        if(adminService.selectByAdminIdAndAdminState(session.getAdminId()) == null){
+            throw new BusinessException(EResponseCode.BizError, "你不是管理员，无法操作", "");
+        }
+        if (postService.selectPostDetailByPostId(params.getPostId()) == null){
+            throw new BusinessException(EResponseCode.BizError, "回复的帖子不存在", "");
+        }
+        params.setReplierId(session.getAdminId());
+        params.setReplierRole("Admin");
+        postReplyService.insertSelective(params);
+        return ResponseResult.success();
+    }
+    @PostMapping("/doctor/post/reply")
+    public Object doctorReplyPost(PostReplyInsertParams params){
+        DoctorSession session = GlobalHelper.get();
+        if(doctorService.selectByDocIdAndDocState(session.getDoctorId()) == null){
+            throw new BusinessException(EResponseCode.BizError, "请登录医生账号后回复", "");
+        }
+        if (postService.selectPostDetailByPostId(params.getPostId()) == null){
+            throw new BusinessException(EResponseCode.BizError, "回复的帖子不存在", "");
+        }
+        PostListResult result = postService.selectPostDetailByPostId(params.getPostId());
+        String departmentId = result.getDepartmentId();
+        if (departmentId != null && !doctorService.selectByDocIdAndDocState(session.getDoctorId()).getDepartmentId().equals(departmentId)){
+            throw new BusinessException(EResponseCode.BizError, "你没有权限回复该帖子", "");
+        }
+        if (result.getPostCategory().equals(EPostCategory.complain.getCategory())){
+            throw new BusinessException(EResponseCode.BizError, "你不可以回复投诉贴", "");
+        }
+        params.setReplierId(session.getDoctorId());
+        params.setReplierRole("Doctor");
+        postReplyService.insertSelective(params);
+        return ResponseResult.success();
+    }
+
+    @PostMapping("/patient/post/reply")
+    public Object patientReplyPost(PostReplyInsertParams params){
+        PatientSession session = GlobalHelper.get();
+        if (!postService.selectPostDetailByPostId(params.getPostId()).getPosterId().equals(session.getPatientId())){
+            throw new BusinessException(EResponseCode.BizError, "你不可以回复非本人的帖子", "");
+        }
+        if (postService.selectPostDetailByPostId(params.getPostId()) == null){
+            throw new BusinessException(EResponseCode.BizError, "回复的帖子不存在", "");
+        }
+        params.setReplierId(session.getPatientId());
+        params.setReplierRole("Patient");
+        postReplyService.insertSelective(params);
+        return ResponseResult.success();
     }
 }

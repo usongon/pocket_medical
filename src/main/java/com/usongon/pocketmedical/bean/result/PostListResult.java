@@ -58,4 +58,6 @@ public class PostListResult {
       Del-已删除
     */
     private String postState;
+
+    private String createTime;
 }

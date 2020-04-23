@@ -139,7 +139,7 @@
     <select id="getPostListByDepartmentIdOrPostState"
             resultType="com.usongon.pocketmedical.bean.result.PostListResult">
         select p.*, pa.patient_name as poster_name from post p, patient pa
-        where p.department_id = #{departmentId,jdbcType=VARCHAR}
+        where (p.department_id = #{departmentId,jdbcType=VARCHAR}  or p.department_id = '' )
         <if test="postState != null">
             and p.post_state = #{postState.postState,jdbcType=VARCHAR}
         </if>

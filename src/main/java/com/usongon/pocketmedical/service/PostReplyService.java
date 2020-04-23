@@ -1,6 +1,7 @@
 package com.usongon.pocketmedical.service;
 
 import com.usongon.pocketmedical.bean.entity.PostReply;
+import com.usongon.pocketmedical.bean.param.PostReplyInsertParams;
 
 /**
  * @author zhangdehua
@@ -11,7 +12,7 @@ public interface PostReplyService {
 
     int insert(PostReply record);
 
-    int insertSelective(PostReply record);
+    int insertSelective(PostReplyInsertParams params);
 
 }
 
