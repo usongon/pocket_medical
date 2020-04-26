@@ -17,6 +17,7 @@ import com.usongon.pocketmedical.enums.EResponseCode;
 import com.usongon.pocketmedical.framework.annotation.Authorize;
 import com.usongon.pocketmedical.framework.exception.BusinessException;
 import com.usongon.pocketmedical.service.*;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -120,6 +121,7 @@ public class PostController {
     }
 
     @PostMapping("/admin/post/reply")
+    @Transactional(rollbackFor = RuntimeException.class)
     public Object adminReplyPost(PostReplyInsertParams params){
         AdminSession session = GlobalHelper.get();
         if(adminService.selectByAdminIdAndAdminState(session.getAdminId()) == null){
@@ -130,10 +132,12 @@ public class PostController {
         }
         params.setReplierId(session.getAdminId());
         params.setReplierRole("Admin");
+        changePostStateToChat(params.getPostId());
         postReplyService.insertSelective(params);
         return ResponseResult.success();
     }
     @PostMapping("/doctor/post/reply")
+    @Transactional(rollbackFor = RuntimeException.class)
     public Object doctorReplyPost(PostReplyInsertParams params){
         DoctorSession session = GlobalHelper.get();
         if(doctorService.selectByDocIdAndDocState(session.getDoctorId()) == null){
@@ -152,11 +156,13 @@ public class PostController {
         }
         params.setReplierId(session.getDoctorId());
         params.setReplierRole("Doctor");
+        changePostStateToChat(params.getPostId());
         postReplyService.insertSelective(params);
         return ResponseResult.success();
     }
 
     @PostMapping("/patient/post/reply")
+    @Transactional(rollbackFor = RuntimeException.class)
     public Object patientReplyPost(PostReplyInsertParams params){
         PatientSession session = GlobalHelper.get();
         if (!postService.selectPostDetailByPostId(params.getPostId()).getPosterId().equals(session.getPatientId())){
@@ -168,11 +174,48 @@ public class PostController {
         params.setReplierId(session.getPatientId());
         params.setReplierRole("Patient");
         postReplyService.insertSelective(params);
+        changePostStateToChat(params.getPostId());
         return ResponseResult.success();
     }
 
     @PostMapping("/post/reply/list")
     public Object getAllPostReply(String postId){
         return ResponseResult.success(postReplyService.selectAllReplyByPostId(postId));
+    }
+
+    @PostMapping("/admin/post/state")
+    public Object adminDelPost(String postId, EPostState toBeState){
+        AdminSession session = GlobalHelper.get();
+        if(toBeState.equals(EPostState.Wait ) || toBeState.equals(EPostState.Chatting)){
+            throw new BusinessException(EResponseCode.BizError, "你只能删除或者关闭帖子", "");
+        }
+        if(adminService.selectByAdminIdAndAdminState(session.getAdminId()) == null){
+            throw new BusinessException(EResponseCode.BizError, "你不是管理员，无法操作", "");
+        }
+        if (postService.selectPostDetailByPostId(postId) == null){
+            throw new BusinessException(EResponseCode.BizError, "操作的帖子不存在", "");
+        }
+        postService.updatePostStateByPostId(toBeState, postId);
+        return ResponseResult.success();
+    }
+
+    @PostMapping("/patient/post/state")
+    public Object patientDelPost(String postId, EPostState toBeState){
+        PatientSession session = GlobalHelper.get();
+        if(toBeState.equals(EPostState.Wait ) || toBeState.equals(EPostState.Chatting)){
+            throw new BusinessException(EResponseCode.BizError, "你只能删除或者关闭帖子", "");
+        }
+        if (!postService.selectPostDetailByPostId(postId).getPosterId().equals(session.getPatientId())){
+            throw new BusinessException(EResponseCode.BizError, "你不可以删除非本人的帖子", "");
+        }
+        if (postService.selectPostDetailByPostId(postId) == null){
+            throw new BusinessException(EResponseCode.BizError, "删除的帖子不存在", "");
+        }
+        postService.updatePostStateByPostId(toBeState, postId);
+        return ResponseResult.success();
+    }
+
+    public void changePostStateToChat(String postId){
+        postService.updatePostStateByPostId(EPostState.Chatting, postId);
     }
 }

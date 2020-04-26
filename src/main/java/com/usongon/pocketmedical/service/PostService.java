@@ -35,4 +35,6 @@ public interface PostService{
     List<PostListResult> getPostListByDepartmentIdOrPostState(String departmentId, EPostState postState, EPostCategory postCategory);
 
     List<PostListResult> adminGetPostListByDepartmentIdOrPostState(String departmentId, EPostState postState, EPostCategory postCategory);
+
+    void updatePostStateByPostId(EPostState updatedPostState,String postId);
 }

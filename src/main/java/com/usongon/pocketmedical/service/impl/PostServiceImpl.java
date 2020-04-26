@@ -77,4 +77,9 @@ public class PostServiceImpl implements PostService{
         return postMapper.adminGetPostListByDepartmentIdOrPostState(departmentId, postState, postCategory);
     }
 
+    @Override
+    public void updatePostStateByPostId(EPostState updatedPostState, String postId) {
+        postMapper.updatePostStateByPostId(updatedPostState.getPostState(), postId);
+    }
+
 }

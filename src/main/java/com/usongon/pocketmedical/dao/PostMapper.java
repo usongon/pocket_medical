@@ -35,4 +35,8 @@ public interface PostMapper {
     List<PostListResult> getPostListByDepartmentIdOrPostState(@Param("departmentId") String departmentId, @Param("postState") EPostState postState, @Param("postCategory") EPostCategory postCategory);
 
     List<PostListResult> adminGetPostListByDepartmentIdOrPostState(@Param("departmentId") String departmentId, @Param("postState") EPostState postState, @Param("postCategory") EPostCategory postCategory);
+
+    void updatePostStateByPostId(@Param("updatedPostState")String updatedPostState,@Param("postId")String postId);
+
+
 }
