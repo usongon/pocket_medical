@@ -124,11 +124,12 @@ public class PostController {
     @Transactional(rollbackFor = RuntimeException.class)
     public Object adminReplyPost(PostReplyInsertParams params){
         AdminSession session = GlobalHelper.get();
+        PostListResult post = postService.selectPostDetailByPostId(params.getPostId());
+        if (post.getPostState().equals(EPostState.Del.getPostState()) || post.getPostState().equals(EPostState.Finished.getPostState())){
+            throw new BusinessException(EResponseCode.BizError, "本帖已无法回复", "");
+        }
         if(adminService.selectByAdminIdAndAdminState(session.getAdminId()) == null){
             throw new BusinessException(EResponseCode.BizError, "你不是管理员，无法操作", "");
-        }
-        if (postService.selectPostDetailByPostId(params.getPostId()) == null){
-            throw new BusinessException(EResponseCode.BizError, "回复的帖子不存在", "");
         }
         params.setReplierId(session.getAdminId());
         params.setReplierRole("Admin");
@@ -140,18 +141,18 @@ public class PostController {
     @Transactional(rollbackFor = RuntimeException.class)
     public Object doctorReplyPost(PostReplyInsertParams params){
         DoctorSession session = GlobalHelper.get();
+        PostListResult post = postService.selectPostDetailByPostId(params.getPostId());
+        if (post.getPostState().equals(EPostState.Del.getPostState()) || post.getPostState().equals(EPostState.Finished.getPostState())){
+            throw new BusinessException(EResponseCode.BizError, "本帖已无法回复", "");
+        }
         if(doctorService.selectByDocIdAndDocState(session.getDoctorId()) == null){
             throw new BusinessException(EResponseCode.BizError, "请登录医生账号后回复", "");
         }
-        if (postService.selectPostDetailByPostId(params.getPostId()) == null){
-            throw new BusinessException(EResponseCode.BizError, "回复的帖子不存在", "");
-        }
-        PostListResult result = postService.selectPostDetailByPostId(params.getPostId());
-        String departmentId = result.getDepartmentId();
+        String departmentId = post.getDepartmentId();
         if (!StringUtils.isEmpty(departmentId) && !doctorService.selectByDocIdAndDocState(session.getDoctorId()).getDepartmentId().equals(departmentId)){
             throw new BusinessException(EResponseCode.BizError, "你没有权限回复该帖子", "");
         }
-        if (result.getPostCategory().equals(EPostCategory.complain.getCategory())){
+        if (post.getPostCategory().equals(EPostCategory.complain.getCategory())){
             throw new BusinessException(EResponseCode.BizError, "你不可以回复投诉贴", "");
         }
         params.setReplierId(session.getDoctorId());
@@ -165,11 +166,12 @@ public class PostController {
     @Transactional(rollbackFor = RuntimeException.class)
     public Object patientReplyPost(PostReplyInsertParams params){
         PatientSession session = GlobalHelper.get();
-        if (!postService.selectPostDetailByPostId(params.getPostId()).getPosterId().equals(session.getPatientId())){
-            throw new BusinessException(EResponseCode.BizError, "你不可以回复非本人的帖子", "");
+        PostListResult post = postService.selectPostDetailByPostId(params.getPostId());
+        if (post.getPostState().equals(EPostState.Del.getPostState()) || post.getPostState().equals(EPostState.Finished.getPostState())){
+            throw new BusinessException(EResponseCode.BizError, "本帖已无法回复", "");
         }
-        if (postService.selectPostDetailByPostId(params.getPostId()) == null){
-            throw new BusinessException(EResponseCode.BizError, "回复的帖子不存在", "");
+        if (!post.getPosterId().equals(session.getPatientId())){
+            throw new BusinessException(EResponseCode.BizError, "你不可以回复非本人的帖子", "");
         }
         params.setReplierId(session.getPatientId());
         params.setReplierRole("Patient");
