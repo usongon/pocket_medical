@@ -69,4 +69,14 @@
       </if>
     </trim>
   </insert>
+    <select id="selectAllReplyByPostId" resultType="com.usongon.pocketmedical.bean.result.PostReplyResult">
+      select r.*,
+             case when r.replier_role = 'admin'
+                    then (select admin_name from admin where admin_id = r.replier_id)
+                  when r.replier_role = 'doctor'
+                    then (select doc_name from doctor where doc_id = r.replier_id)
+                  when r.replier_role = 'patient'
+                    then (select patient_name from patient where patient_id = r.replier_id)
+               end as replier_name from post_reply as r where r.post_id = #{postId,jdbcType=VARCHAR}
+    </select>
 </mapper>

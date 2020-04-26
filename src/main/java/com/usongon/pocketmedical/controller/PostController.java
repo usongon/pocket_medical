@@ -17,6 +17,7 @@ import com.usongon.pocketmedical.enums.EResponseCode;
 import com.usongon.pocketmedical.framework.annotation.Authorize;
 import com.usongon.pocketmedical.framework.exception.BusinessException;
 import com.usongon.pocketmedical.service.*;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -97,7 +98,7 @@ public class PostController {
     public Object doctorGetPostDetail(String postId){
         DoctorSession session = GlobalHelper.get();
         PostListResult result = postService.selectPostDetailByPostId(postId);
-        if (result.getDepartmentId() != null &&
+        if (!StringUtils.isEmpty(result.getDepartmentId()) &&
                 !doctorService.selectByDocIdAndDocState(
                         session.getDoctorId()).getDepartmentId().
                         equals(result.getDepartmentId())){
@@ -143,7 +144,7 @@ public class PostController {
         }
         PostListResult result = postService.selectPostDetailByPostId(params.getPostId());
         String departmentId = result.getDepartmentId();
-        if (departmentId != null && !doctorService.selectByDocIdAndDocState(session.getDoctorId()).getDepartmentId().equals(departmentId)){
+        if (!StringUtils.isEmpty(departmentId) && !doctorService.selectByDocIdAndDocState(session.getDoctorId()).getDepartmentId().equals(departmentId)){
             throw new BusinessException(EResponseCode.BizError, "你没有权限回复该帖子", "");
         }
         if (result.getPostCategory().equals(EPostCategory.complain.getCategory())){
@@ -168,5 +169,10 @@ public class PostController {
         params.setReplierRole("Patient");
         postReplyService.insertSelective(params);
         return ResponseResult.success();
+    }
+
+    @PostMapping("/post/reply/list")
+    public Object getAllPostReply(String postId){
+        return ResponseResult.success(postReplyService.selectAllReplyByPostId(postId));
     }
 }

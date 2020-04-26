@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 public abstract class LoginSession {
-    private String corpId;
 
     /**
      * 登陆者id
