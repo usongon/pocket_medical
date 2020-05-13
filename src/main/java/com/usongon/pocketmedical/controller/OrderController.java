@@ -118,4 +118,48 @@ public class OrderController {
         AdminSession session = GlobalHelper.get();
         return ResponseResult.success(orderService.getOrderDetail(orderId));
     }
+
+    /**
+     * 患者删除或者完结自己的预约
+     */
+    @PostMapping("/patient/order/state")
+    public Object patientOrderState(String orderId, String state){
+        PatientSession session = GlobalHelper.get();
+        OrderDetailResult result = orderService.getOrderDetail(orderId);
+        if (!result.getOrderPatient().equals(session.getPatientId())){
+            throw new BusinessException(EResponseCode.BizError, "你不能修改其他人的预约", "");
+        }
+        orderService.updateOrderStateByOrderId(state, orderId);
+        return ResponseResult.success();
+    }
+
+    /**
+     * 医生接受/拒绝/完结 预约
+     */
+
+    @PostMapping("/doctor/order/state")
+    public Object doctorOrderState(String orderId, String state){
+        DoctorSession session = GlobalHelper.get();
+        OrderDetailResult orderResult = orderService.getOrderDetail(orderId);
+        if (!StringUtils.isEmpty(orderResult.getOrderDoctor()) && !orderResult.getOrderDoctor().equals(session.getDoctorId())){
+            throw new BusinessException(EResponseCode.BizError, "这不是与您有关的预约", "");
+        }
+        Doctor doctorResult = doctorService.selectByDocIdAndDocState(session.getDoctorId());
+        if (!orderResult.getOrderDepartment().equals(doctorResult.getDepartmentId())){
+            throw new BusinessException(EResponseCode.BizError, "这不是与您的部门有关的预约", "");
+        }
+        orderService.updateOrderStateByOrderId(state, orderId);
+        return ResponseResult.success();
+    }
+
+    /**
+     * 超管 完结/删除 预约
+     */
+
+    @PostMapping("/admin/order/state")
+    public Object adminOrderState(String orderId, String state){
+        AdminSession session = GlobalHelper.get();
+        orderService.updateOrderStateByOrderId(state, orderId);
+        return ResponseResult.success();
+    }
 }

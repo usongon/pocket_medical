@@ -1,6 +1,5 @@
 package com.usongon.pocketmedical.service.impl;
 
-import com.sun.tools.corba.se.idl.constExpr.Or;
 import com.usongon.pocketmedical.bean.param.OrderGetListParams;
 import com.usongon.pocketmedical.bean.param.OrderInsertParams;
 import com.usongon.pocketmedical.bean.result.OrderDetailResult;
