@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.usongon.pocketmedical.dao.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.usongon.pocketmedical.bean.entity.Order">
+    <!--@mbg.generated-->
+    <!--@Table `order`-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="order_patient" jdbcType="VARCHAR" property="orderPatient" />
+    <result column="order_department" jdbcType="VARCHAR" property="orderDepartment" />
+    <result column="order_doctor" jdbcType="VARCHAR" property="orderDoctor" />
+    <result column="order_content" jdbcType="VARCHAR" property="orderContent" />
+    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
+    <result column="order_state" jdbcType="VARCHAR" property="orderState" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, order_id, order_patient, order_department, order_doctor, order_content, order_time, 
+    order_state, create_time, update_time
+  </sql>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.Order" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `order` (order_id, order_patient, order_department, 
+      order_doctor, order_content, order_time, 
+      order_state, create_time, update_time
+      )
+    values (#{orderId,jdbcType=VARCHAR}, #{orderPatient,jdbcType=VARCHAR}, #{orderDepartment,jdbcType=VARCHAR}, 
+      #{orderDoctor,jdbcType=VARCHAR}, #{orderContent,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP}, 
+      #{orderState,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.usongon.pocketmedical.bean.entity.Order" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `order`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="orderPatient != null">
+        order_patient,
+      </if>
+      <if test="orderDepartment != null">
+        order_department,
+      </if>
+      <if test="orderDoctor != null">
+        order_doctor,
+      </if>
+      <if test="orderContent != null">
+        order_content,
+      </if>
+      <if test="orderTime != null">
+        order_time,
+      </if>
+      <if test="orderState != null">
+        order_state,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPatient != null">
+        #{orderPatient,jdbcType=VARCHAR},
+      </if>
+      <if test="orderDepartment != null">
+        #{orderDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="orderDoctor != null">
+        #{orderDoctor,jdbcType=VARCHAR},
+      </if>
+      <if test="orderContent != null">
+        #{orderContent,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null">
+        #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderState != null">
+        #{orderState,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectByOrderDepartmentAndOrderDoctor" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from `order`
+        where order_department=#{orderDepartment,jdbcType=VARCHAR} and order_doctor=#{orderDoctor,jdbcType=VARCHAR}
+    </select>
+  <select id="getOrderList" resultType="com.usongon.pocketmedical.bean.result.OrderListResult">
+    select o.*, p.patient_name, d.department_name from `order` as o, patient as p, department as d, doctor as dc
+    where o.order_state != 'Del'
+    <where>
+      <if test="orderPatient != null"> and o.order_patient = #{orderPatient,jdbcType=VARCHAR}</if>
+      <if test="orderDepartment != null"> and o.order_department = #{orderDepartment,jdbcType=VARCHAR}</if>
+      <if test="orderDoctor != null"> and (o.order_doctor = #{orderDoctor,jdbcType=VARCHAR} or o.order_doctor = '') and o.order_doctor = dc.doc_id</if>
+      <if test="orderState != null"> and o.order_state = #{orderState,jdbcType=VARCHAR}</if>
+    </where>
+      and o.order_patient = p.patient_id and o.order_department = d.department_id and dc.department_id = d.department_id and o.order_doctor = dc.doc_id
+  </select>
+
+<!--auto generated by MybatisCodeHelper on 2020-05-13-->
+  <update id="updateOrderStateByOrderId">
+    update `order`
+    set order_state=#{updatedOrderState,jdbcType=VARCHAR}
+    where order_id=#{orderId,jdbcType=VARCHAR} and order_state != 'Del'
+  </update>
+  <select id="getOrderDetail" resultType="com.usongon.pocketmedical.bean.result.OrderDetailResult">
+    select o.*, p.patient_name, d.department_name, dc.doc_name as doctor_name
+    from `order` o, patient p, department d, doctor dc
+    where o.order_patient = p.patient_id and o.order_department = d.department_id
+      and o.order_doctor = dc.doc_id and o.order_id = #{orderId,jdbcType=VARCHAR}
+    and o.order_state != 'Del' and d.department_id = dc.department_id
+  </select>
+</mapper>
