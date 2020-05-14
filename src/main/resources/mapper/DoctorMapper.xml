@@ -216,4 +216,8 @@
         from doctor
         where doc_id=#{docId,jdbcType=VARCHAR} and doc_state != 'Del' limit 1
     </select>
+  <select id="getDoctorListByDepartmentId" resultType="com.usongon.pocketmedical.bean.result.DoctorResult">
+    select dc.*, d.department_name from doctor dc, department d where dc.department_id = #{departmentId,jdbcType=VARCHAR} and dc.doc_state != 'Del'
+    and dc.department_id = d.department_id
+  </select>
 </mapper>

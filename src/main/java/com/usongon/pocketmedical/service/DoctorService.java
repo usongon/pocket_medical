@@ -34,5 +34,7 @@ public interface DoctorService {
     List<DoctorResult> getDoctorList(DoctorSelectParams params);
 
     Doctor selectByDocIdAndDocState(String docId);
+
+    List<DoctorResult> getDoctorListByDepartmentId(String departmentId);
 }
 

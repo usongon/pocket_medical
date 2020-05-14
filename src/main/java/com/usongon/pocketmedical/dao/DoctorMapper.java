@@ -1,8 +1,10 @@
 package com.usongon.pocketmedical.dao;
+
 import com.usongon.pocketmedical.bean.param.DoctorSelectParams;
 import com.usongon.pocketmedical.bean.result.DoctorResult;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 import com.usongon.pocketmedical.bean.entity.Doctor;
@@ -25,11 +27,11 @@ public interface DoctorMapper {
 
     int updateByPrimaryKey(Doctor record);
 
-    Doctor selectByDocMobile(@Param("docMobile")String docMobile);
+    Doctor selectByDocMobile(@Param("docMobile") String docMobile);
 
-    void updateDecDocStateByDocId(@Param("deductedDocState")String deductedDocState,@Param("docId")String docId);
+    void updateDecDocStateByDocId(@Param("deductedDocState") String deductedDocState, @Param("docId") String docId);
 
-    List<Doctor> selectAllByDocState(@Param("docState")String docState);
+    List<Doctor> selectAllByDocState(@Param("docState") String docState);
 
     List<Doctor> selectByAllExceptId(Doctor doctor);
 
@@ -45,9 +47,9 @@ public interface DoctorMapper {
             "</script>")
     List<DoctorResult> getDoctorList(DoctorSelectParams params);
 
-    Doctor selectByDocIdAndDocState(@Param("docId")String docId);
+    Doctor selectByDocIdAndDocState(@Param("docId") String docId);
 
-
+    List<DoctorResult> getDoctorListByDepartmentId(@Param("departmentId") String departmentId);
 
 
 }

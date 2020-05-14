@@ -21,7 +21,8 @@ import javax.annotation.Resource;
 public class PatientController {
     @Resource
     private PatientService patientService;
-
+    @Resource
+    private DoctorService doctorService;
     @Authorize(login = false)
     @PostMapping("/patient/register")
     public Object registerDoc(PatientRegisterParams params){
@@ -32,5 +33,14 @@ public class PatientController {
         }
         patientService.insert(params);
         return ResponseResult.success();
+    }
+
+    /**
+     * 患者获取医生列表
+     */
+
+    @PostMapping("/doctor/list")
+    public Object patientGetDocList(String departmentId){
+        return ResponseResult.success(doctorService.getDoctorListByDepartmentId(departmentId));
     }
 }

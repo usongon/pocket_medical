@@ -43,6 +43,7 @@ public class AdminServiceImpl implements AdminService{
         if (adminMapper.selectByAdminMobileAndAdminState(params.getAdminMobile()) != null){
             throw new BusinessException(EResponseCode.BizError, "手机号重复", "");
         }
+        //密码加密
         params.setAdminPassword(PasswordUtil.encode(params.getAdminPassword()));
         Admin record = new Admin();
         BeanUtils.copyProperties(params, record);
