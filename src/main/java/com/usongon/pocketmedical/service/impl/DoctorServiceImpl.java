@@ -13,12 +13,11 @@ import javax.annotation.Resource;
 import com.usongon.pocketmedical.dao.DoctorMapper;
 import com.usongon.pocketmedical.bean.entity.Doctor;
 import com.usongon.pocketmedical.service.DoctorService;
-import sun.security.krb5.internal.PAData;
 
 import java.util.List;
 
 /**
- * @author zhangdehua
+ * @author yxp
  * @date 2020-03-29
  */
 @Service

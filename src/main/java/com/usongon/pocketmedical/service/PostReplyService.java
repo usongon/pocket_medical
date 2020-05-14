@@ -7,7 +7,7 @@ import com.usongon.pocketmedical.bean.result.PostReplyResult;
 import java.util.List;
 
 /**
- * @author zhangdehua
+ * @author yxp
  * @date 2020-04-14
  */
 public interface PostReplyService {

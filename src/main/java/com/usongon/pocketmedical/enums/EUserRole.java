@@ -3,7 +3,7 @@ package com.usongon.pocketmedical.enums;
 import lombok.AllArgsConstructor;
 
 /**
- * @author zhangdehua
+ * @author yxp
  * @date 2019-10-15
  */
 @AllArgsConstructor

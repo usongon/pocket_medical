@@ -6,7 +6,7 @@ import com.usongon.pocketmedical.bean.result.DepartmentResult;
 import java.util.List;
     /**
  *
- * @author zhangdehua
+ * @author yxp
  * @date 2020-04-01
  */
 public interface DepartmentService{

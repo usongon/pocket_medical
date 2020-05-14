@@ -10,7 +10,7 @@ import com.usongon.pocketmedical.dao.DepartmentMapper;
 import com.usongon.pocketmedical.service.DepartmentService;
 /**
  *
- * @author zhangdehua
+ * @author yxp
  * @date 2020-04-01
  */
 @Service

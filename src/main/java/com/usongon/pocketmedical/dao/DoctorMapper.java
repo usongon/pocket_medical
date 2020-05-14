@@ -11,7 +11,7 @@ import com.usongon.pocketmedical.bean.entity.Doctor;
 import org.apache.ibatis.annotations.Select;
 
 /**
- * @author zhangdehua
+ * @author yxp
  * @date 2020-03-29
  */
 @Mapper

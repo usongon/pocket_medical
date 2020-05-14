@@ -13,7 +13,7 @@ import com.usongon.pocketmedical.enums.EDoctorAndPatientState;
 import java.util.List;
     /**
  *
- * @author zhangdehua
+ * @author yxp
  * @date 2020-03-31
  */
 public interface AdminService{

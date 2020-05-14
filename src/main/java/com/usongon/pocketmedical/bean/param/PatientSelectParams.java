@@ -3,7 +3,7 @@ package com.usongon.pocketmedical.bean.param;
 import lombok.Data;
 
 /**
- * @author zhangdehua
+ * @author yxp
  * @date 2020-03-29
  */
 @Data

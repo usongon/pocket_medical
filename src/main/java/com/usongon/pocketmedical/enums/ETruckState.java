@@ -1,7 +1,7 @@
 package com.usongon.pocketmedical.enums;
 
 /**
- * @author zhangdehua
+ * @author yxp
  * @date 2019-11-11
  */
 public enum ETruckState {

@@ -14,7 +14,7 @@ import com.usongon.pocketmedical.bean.entity.Post;
 import com.usongon.pocketmedical.service.PostService;
 /**
  *
- * @author zhangdehua
+ * @author yxp
  * @date 2020-04-14
  */
 @Service

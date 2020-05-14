@@ -8,7 +8,7 @@ import com.usongon.pocketmedical.bean.result.PatientResult;
 import java.util.List;
 
 /**
- * @author zhangdehua
+ * @author yxp
  * @date 2020-03-29
  */
 public interface PatientService {

@@ -4,7 +4,7 @@ import com.usongon.pocketmedical.bean.param.LoginParams;
 import com.usongon.pocketmedical.bean.result.LoginResult;
 
 /**
- * @author zhangdehua
+ * @author yxp
  * @date 2019-11-12
  */
 public interface LoginService {

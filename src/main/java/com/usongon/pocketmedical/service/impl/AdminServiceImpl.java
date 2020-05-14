@@ -23,7 +23,7 @@ import com.usongon.pocketmedical.dao.AdminMapper;
 import com.usongon.pocketmedical.service.AdminService;
 /**
  *
- * @author zhangdehua
+ * @author yxp
  * @date 2020-03-31
  */
 @Service
